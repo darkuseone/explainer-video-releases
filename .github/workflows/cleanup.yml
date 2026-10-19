@@ -1,0 +1,21 @@
+name: weekly-cleanup
+on:
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete releases older than 7 days
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          cutoff=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          gh release list --limit 200 --json tagName,createdAt \
+            --jq ".[] | select(.createdAt < \"$cutoff\") | .tagName" | while read t; do
+            gh release delete "$t" --cleanup-tag --yes
+          done
