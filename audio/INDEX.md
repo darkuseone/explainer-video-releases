@@ -221,3 +221,17 @@
 | cyberpunk_05_136bpm.mp3 | https://assets.mixkit.co/music/464/464.mp3 |
 | cyberpunk_03_123bpm.mp3 | https://assets.mixkit.co/music/395/395.mp3 |
 | cyberpunk_04_144bpm.mp3 | https://assets.mixkit.co/music/117/117.mp3 |
+
+| `sfx/bolt9/bass_hit_sub.wav` | 1.20 | саб-удар под цифры | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/bolt9/hum_static_bed.wav` | 6.00 | статический гул-подложка | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/bolt9/leader_step_1.wav` | 0.12 | ступенчатый лидер, шаг 1 | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/bolt9/leader_step_2.wav` | 0.12 | ступенчатый лидер, шаг 2 | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/bolt9/leader_step_3.wav` | 0.12 | ступенчатый лидер, шаг 3 | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/bolt9/thunder_crack_close.wav` | 4.50 | близкий удар грома | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/bolt9/thunder_roll_far.wav` | 5.00 | дальний раскат | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/bolt9/zap_electric.wav` | 0.90 | электрический разряд | bolt9 | синтез, `synth/synth_bolt.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/uran9/orbit_sweep.wav` | 1.40 | свип по орбите | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/uran9/party_horn_sad.wav` | 1.10 | грустная дудка-пищалка | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/uran9/planet_chime.wav` | 1.60 | космический перезвон на планету | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/uran9/space_drone_bed.wav` | 8.00 | космический дрон-подложка | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/uran9/year_tick.wav` | 0.06 | тик счётчика лет | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
