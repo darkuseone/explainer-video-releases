@@ -235,3 +235,17 @@
 | `sfx/uran9/planet_chime.wav` | 1.60 | космический перезвон на планету | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
 | `sfx/uran9/space_drone_bed.wav` | 8.00 | космический дрон-подложка | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
 | `sfx/uran9/year_tick.wav` | 0.06 | тик счётчика лет | uran9 | синтез, `synth/synth_uran.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/hum9/air_flow.wav` | 1.60 | поток воздуха через нос | hum9 | синтез, `synth/synth_hum.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/hum9/bagpipe_sad.wav` | 1.50 | грустная сдувающаяся волынка | hum9 | синтез, `synth/synth_hum.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/hum9/cheek_squeak.wav` | 0.70 | резиновый скрип надутых щёк | hum9 | синтез, `synth/synth_hum.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/hum9/flag_flap.wav` | 0.50 | хлопок флага | hum9 | синтез, `synth/synth_hum.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/hum9/hum_choke.wav` | 3.00 | носовое «ммм», которое глохнет | hum9 | синтез, `synth/synth_hum.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/hum9/pressure_rise.wav` | 3.40 | нарастание давления | hum9 | синтез, `synth/synth_hum.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/hum9/sniff_block.wav` | 0.60 | шмыг заложенным носом | hum9 | синтез, `synth/synth_hum.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/eif9/browser_click.wav` | 0.25 | клик и загрузка страницы | eif9 | синтез, `synth/synth_eif.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/eif9/calc_beep.wav` | 0.09 | бип калькулятора | eif9 | синтез, `synth/synth_eif.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/eif9/frost_crack.wav` | 0.50 | морозный треск | eif9 | синтез, `synth/synth_eif.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/eif9/heat_shimmer.wav` | 2.00 | жаркое марево, воздушный свип | eif9 | синтез, `synth/synth_eif.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/eif9/metal_groan.wav` | 1.80 | стон нагретого металла | eif9 | синтез, `synth/synth_eif.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/eif9/rivet_ping.wav` | 1.20 | звон заклёпки | eif9 | синтез, `synth/synth_eif.py` | собственный (сгенерировано кодом) | 1 |
+| `sfx/eif9/sun_sweep.wav` | 2.40 | тёплый свип солнца по кругу | eif9 | синтез, `synth/synth_eif.py` | собственный (сгенерировано кодом) | 1 |
