@@ -1,0 +1,48 @@
+Hiroshima J                                      6.276e+13
+Tsar Bomba J                                     2.092e+17
+Earth binding uniform J                          2.242e+32
+Earth binding PREM J                             2.49e+32
+v_escape m/s                                     1.119e+04
+atm mass kg                                      5.148e+18
+atm escape energy J                              3.221e+26
+arsenal J (2030 Mt)                              8.494e+18
+--- Hiroshimas
+Hiroshimas for Earth (uniform)                   3.572e+18
+Hiroshimas for Earth (PREM)                      3.967e+18
+Tsar Bombas for Earth (uniform)                  1.072e+15
+Hiroshimas for atmosphere                        5.132e+12
+Tsar Bombas for atmosphere                       1.54e+09
+Hiroshimas in arsenal                            1.353e+05
+Tsar-equivalents in arsenal                      40.6
+--- ratios
+Earth binding / arsenal                          2.64e+13
+PREM binding / arsenal                           2.932e+13
+atm energy / arsenal                             3.792e+07
+Earth binding / Cold-War peak arsenal            2.143e+12
+atm / Cold-War peak                              3.079e+06
+Earth binding / (10x arsenal)                    2.64e+12
+arsenal / Earth binding                          3.789e-14
+arsenal / atm energy                             2.637e-08
+--- analogies
+years of 1 Hiroshima/s for Earth                 1.132e+11
+same / age of universe 13.8e9                    8.203
+Hiroshimas per second since Big Bang (13.8Gyr)   8.203
+Sun output seconds = Earth binding               5.857e+05
+Sun output days = Earth binding                  6.778
+Sun output seconds = atm energy                  0.8414
+Sunlight on Earth W                              1.735e+17
+arsenal in seconds of sunlight on Earth          48.94
+Chicxulub / arsenal                              1.177e+04
+Chicxulub (3e23)/arsenal                         3.532e+04
+Earth binding / Chicxulub                        2.242e+09
+Earth binding / Chicxulub 3e23                   7.473e+08
+Chicxulub in Hiroshimas                          1.593e+09
+Chicxulub 3e23 in Hiroshimas                     4.78e+09
+atm / Chicxulub                                  3221
+--- human scale: arsenal as fraction of Earth binding, if Earth = Everest-ish? use mass analogy
+if Earth binding = 1 Moscow-Paris? ; fraction    3.789e-14
+if Earth binding=Earth-Sun distance, arsenal is (mm) 5.668
+if Earth binding=all oceans(1.335e21 L), arsenal litres 5.058e+07
+same in teaspoons(5mL)                           1.012e+10
+if atm energy = 1 year, arsenal = seconds        0.8322
+if Earth binding = 1 year of seconds, arsenal = s 1.196e-06
