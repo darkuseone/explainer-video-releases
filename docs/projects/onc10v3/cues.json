@@ -1,0 +1,852 @@
+[
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_1.wav",
+  "cue": 0.0,
+  "start": 0.0,
+  "gain": -18.69,
+  "label": "hook",
+  "pan": 0
+ },
+ {
+  "role": "hit",
+  "sound": "cut_hit/punch",
+  "file": "hit_1.wav",
+  "cue": 2.4,
+  "start": 2.4,
+  "gain": -24.53,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/crisp",
+  "file": "whoosh-short_1.wav",
+  "cue": 4.8,
+  "start": 4.7065,
+  "gain": -19.19,
+  "label": "cut whip",
+  "pan": -0.2
+ },
+ {
+  "role": "snap",
+  "sound": "shutter/dslr",
+  "file": "snap_1.wav",
+  "cue": 7.36,
+  "start": 7.3685,
+  "gain": -17.41,
+  "label": "cut flash",
+  "pan": 0.4
+ },
+ {
+  "role": "glitch",
+  "sound": "glitch/mid",
+  "file": "glitch_1.wav",
+  "cue": 9.4,
+  "start": 9.3695,
+  "gain": -18.16,
+  "label": "cut glitch",
+  "pan": 0.15
+ },
+ {
+  "role": "hit",
+  "sound": "cut_hit/punch",
+  "file": "hit_2.wav",
+  "cue": 11.15,
+  "start": 11.15,
+  "gain": -17.56,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/crisp",
+  "file": "whoosh-short_2.wav",
+  "cue": 12.7,
+  "start": 12.5895,
+  "gain": -14.57,
+  "label": "cut whip",
+  "pan": -0.35
+ },
+ {
+  "role": "snap",
+  "sound": "shutter/dslr",
+  "file": "snap_2.wav",
+  "cue": 15.06,
+  "start": 15.069,
+  "gain": -17.24,
+  "label": "cut flash",
+  "pan": 0.3
+ },
+ {
+  "role": "glitch",
+  "sound": "glitch/mid",
+  "file": "glitch_2.wav",
+  "cue": 20.85,
+  "start": 20.8195,
+  "gain": -18.42,
+  "label": "cut glitch",
+  "pan": -0.2
+ },
+ {
+  "role": "hit",
+  "sound": "cut_hit/punch",
+  "file": "hit_3.wav",
+  "cue": 24.34,
+  "start": 24.34,
+  "gain": -23.79,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "snap",
+  "sound": "shutter/dslr",
+  "file": "snap_1.wav",
+  "cue": 26.5,
+  "start": 26.5085,
+  "gain": -22.1,
+  "label": "cut flash",
+  "pan": 0.15
+ },
+ {
+  "role": "land",
+  "sound": "pro_pop_in/round",
+  "file": "land_2.wav",
+  "cue": 28.2,
+  "start": 28.2288,
+  "gain": -16.15,
+  "label": "cut dip",
+  "pan": 0
+ },
+ {
+  "role": "hit",
+  "sound": "cut_hit/punch",
+  "file": "hit_1.wav",
+  "cue": 30.1,
+  "start": 30.1,
+  "gain": -22.95,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "land",
+  "sound": "pro_pop_in/round",
+  "file": "land_3.wav",
+  "cue": 32.35,
+  "start": 32.3788,
+  "gain": -19.4,
+  "label": "cut dip",
+  "pan": 0
+ },
+ {
+  "role": "glitch",
+  "sound": "glitch/mid",
+  "file": "glitch_1.wav",
+  "cue": 34.65,
+  "start": 34.6195,
+  "gain": -18.48,
+  "label": "cut glitch",
+  "pan": -0.2
+ },
+ {
+  "role": "snap",
+  "sound": "shutter/dslr",
+  "file": "snap_2.wav",
+  "cue": 36.35,
+  "start": 36.359,
+  "gain": -15.77,
+  "label": "cut flash",
+  "pan": 0.4
+ },
+ {
+  "role": "hit",
+  "sound": "cut_hit/punch",
+  "file": "hit_2.wav",
+  "cue": 37.65,
+  "start": 37.65,
+  "gain": -26.7,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/crisp",
+  "file": "whoosh-short_1.wav",
+  "cue": 39.6,
+  "start": 39.5065,
+  "gain": -17.65,
+  "label": "cut whip",
+  "pan": -0.4
+ },
+ {
+  "role": "glitch",
+  "sound": "glitch/mid",
+  "file": "glitch_2.wav",
+  "cue": 43.2,
+  "start": 43.1695,
+  "gain": -14.5,
+  "label": "cut glitch",
+  "pan": -0.35
+ },
+ {
+  "role": "land",
+  "sound": "pro_pop_in/round",
+  "file": "land_4.wav",
+  "cue": 45.15,
+  "start": 45.1788,
+  "gain": -20.88,
+  "label": "cut dip",
+  "pan": 0
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/crisp",
+  "file": "whoosh-short_2.wav",
+  "cue": 47.8,
+  "start": 47.6895,
+  "gain": -14.11,
+  "label": "cut whip",
+  "pan": -0.2
+ },
+ {
+  "role": "snap",
+  "sound": "shutter/dslr",
+  "file": "snap_1.wav",
+  "cue": 49.4,
+  "start": 49.4085,
+  "gain": -19.15,
+  "label": "cut flash",
+  "pan": 0.4
+ },
+ {
+  "role": "hit",
+  "sound": "cut_hit/punch",
+  "file": "hit_3.wav",
+  "cue": 51.35,
+  "start": 51.35,
+  "gain": -17.75,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/crisp",
+  "file": "whoosh-short_3.wav",
+  "cue": 52.6,
+  "start": 52.4955,
+  "gain": -16.42,
+  "label": "cut whip",
+  "pan": -0.4
+ },
+ {
+  "role": "glitch",
+  "sound": "glitch/mid",
+  "file": "glitch_1.wav",
+  "cue": 54.75,
+  "start": 54.7195,
+  "gain": -17.27,
+  "label": "cut glitch",
+  "pan": -0.35
+ },
+ {
+  "role": "snap",
+  "sound": "shutter/dslr",
+  "file": "snap_2.wav",
+  "cue": 57.45,
+  "start": 57.459,
+  "gain": -19.35,
+  "label": "cut flash",
+  "pan": 0.3
+ },
+ {
+  "role": "bell",
+  "sound": "mallet/glock",
+  "file": "bell_E5.wav",
+  "cue": 18.1,
+  "start": 18.08,
+  "gain": -26.04,
+  "label": "number lands",
+  "pan": -0.2
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 45.15,
+  "start": 45.1488,
+  "gain": -14.32,
+  "label": "counter",
+  "pan": 0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 45.216,
+  "start": 45.2148,
+  "gain": -17.51,
+  "label": "counter",
+  "pan": 0.15
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 45.282,
+  "start": 45.2808,
+  "gain": -17.45,
+  "label": "counter",
+  "pan": -0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 45.348,
+  "start": 45.3468,
+  "gain": -16.95,
+  "label": "counter",
+  "pan": -0.35
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 45.414,
+  "start": 45.4128,
+  "gain": -18.44,
+  "label": "counter",
+  "pan": 0.3
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 45.48,
+  "start": 45.4788,
+  "gain": -17.57,
+  "label": "counter",
+  "pan": -0.2
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 45.546,
+  "start": 45.5448,
+  "gain": -17.08,
+  "label": "counter",
+  "pan": 0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 45.612,
+  "start": 45.6108,
+  "gain": -18.93,
+  "label": "counter",
+  "pan": 0.15
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 45.678,
+  "start": 45.6768,
+  "gain": -17.44,
+  "label": "counter",
+  "pan": -0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 45.744,
+  "start": 45.7428,
+  "gain": -16.55,
+  "label": "counter",
+  "pan": -0.35
+ },
+ {
+  "role": "bell",
+  "sound": "mallet/glock",
+  "file": "bell_E5.wav",
+  "cue": 45.85,
+  "start": 45.83,
+  "gain": -26.51,
+  "label": "number lands",
+  "pan": 0.3
+ },
+ {
+  "role": "bell",
+  "sound": "mallet/glock",
+  "file": "bell_C5.wav",
+  "cue": 32.35,
+  "start": 32.33,
+  "gain": -22.83,
+  "label": "3 years",
+  "pan": -0.2
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_1.wav",
+  "cue": 28.2,
+  "start": 28.2015,
+  "gain": -15.9,
+  "label": "8 of 16 dots",
+  "pan": 0.4
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_2.wav",
+  "cue": 28.314,
+  "start": 28.3155,
+  "gain": -16.84,
+  "label": "8 of 16 dots",
+  "pan": 0.15
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_3.wav",
+  "cue": 28.428,
+  "start": 28.4295,
+  "gain": -18.23,
+  "label": "8 of 16 dots",
+  "pan": -0.4
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_4.wav",
+  "cue": 28.542,
+  "start": 28.5435,
+  "gain": -18.29,
+  "label": "8 of 16 dots",
+  "pan": -0.35
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_1.wav",
+  "cue": 28.656,
+  "start": 28.6575,
+  "gain": -18.9,
+  "label": "8 of 16 dots",
+  "pan": 0.3
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_2.wav",
+  "cue": 28.77,
+  "start": 28.7715,
+  "gain": -20.04,
+  "label": "8 of 16 dots",
+  "pan": -0.2
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_3.wav",
+  "cue": 28.884,
+  "start": 28.8855,
+  "gain": -20.26,
+  "label": "8 of 16 dots",
+  "pan": 0.4
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_4.wav",
+  "cue": 28.998,
+  "start": 28.9995,
+  "gain": -21.85,
+  "label": "8 of 16 dots",
+  "pan": 0.15
+ },
+ {
+  "role": "click.confirm",
+  "sound": "notify/mid_tine",
+  "file": "click-confirm_1.wav",
+  "cue": 29.0,
+  "start": 28.9965,
+  "gain": -22.36,
+  "label": "8/16 done",
+  "pan": -0.4
+ },
+ {
+  "role": "tock",
+  "sound": "knock/wood",
+  "file": "tock_1.wav",
+  "cue": 21.43,
+  "start": 21.3778,
+  "gain": -19.7,
+  "label": "stamp",
+  "pan": -0.35
+ },
+ {
+  "role": "tock",
+  "sound": "knock/wood",
+  "file": "tock_2.wav",
+  "cue": 24.34,
+  "start": 24.2878,
+  "gain": -18.88,
+  "label": "stamp",
+  "pan": 0.3
+ },
+ {
+  "role": "tock",
+  "sound": "knock/wood",
+  "file": "tock_3.wav",
+  "cue": 37.68,
+  "start": 37.6278,
+  "gain": -18.78,
+  "label": "stamp",
+  "pan": -0.2
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_1.wav",
+  "cue": 51.39,
+  "start": 51.3915,
+  "gain": -15.74,
+  "label": "CTA",
+  "pan": 0.4
+ },
+ {
+  "role": "pop",
+  "sound": "ui_pop/soft",
+  "file": "pop_2.wav",
+  "cue": 54.82,
+  "start": 54.8215,
+  "gain": -18.97,
+  "label": "CTA",
+  "pan": 0.15
+ },
+ {
+  "role": "riser",
+  "sound": "riser/dark",
+  "file": "riser_1.wav",
+  "cue": 57.45,
+  "start": 56.7305,
+  "gain": -15.52,
+  "label": "loop end",
+  "pan": -0.4
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/crisp",
+  "file": "whoosh-short_1.wav",
+  "cue": 6.2,
+  "start": 6.1065,
+  "gain": -20.81,
+  "label": "cut (critique fix)",
+  "pan": -0.35
+ },
+ {
+  "role": "tock",
+  "sound": "knock/wood",
+  "file": "tock_1.wav",
+  "cue": 47.96,
+  "start": 47.9078,
+  "gain": -12.95,
+  "label": "cut (critique fix)",
+  "pan": 0.3
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_1.wav",
+  "cue": 29.0,
+  "start": 29.0,
+  "gain": -25.56,
+  "label": "sub under number reveal",
+  "pan": 0
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_2.wav",
+  "cue": 45.85,
+  "start": 45.85,
+  "gain": -27.56,
+  "label": "sub under number reveal",
+  "pan": 0
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 16.267,
+  "start": 16.2658,
+  "gain": -14.61,
+  "label": "beat hat",
+  "pan": 0.15
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 16.596,
+  "start": 16.5945,
+  "gain": -15.24,
+  "label": "beat hat",
+  "pan": -0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 16.834,
+  "start": 16.8325,
+  "gain": -13.29,
+  "label": "beat hat",
+  "pan": -0.35
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 17.162,
+  "start": 17.1611,
+  "gain": -14.16,
+  "label": "beat hat",
+  "pan": 0.3
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 17.4,
+  "start": 17.3991,
+  "gain": -12.97,
+  "label": "beat hat",
+  "pan": -0.2
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 17.729,
+  "start": 17.7278,
+  "gain": -12.5,
+  "label": "beat hat",
+  "pan": 0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 17.967,
+  "start": 17.9658,
+  "gain": -17.93,
+  "label": "beat hat",
+  "pan": 0.15
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 18.296,
+  "start": 18.2945,
+  "gain": -16.47,
+  "label": "beat hat",
+  "pan": -0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 18.534,
+  "start": 18.5325,
+  "gain": -11.68,
+  "label": "beat hat",
+  "pan": -0.35
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 18.862,
+  "start": 18.8611,
+  "gain": -11.56,
+  "label": "beat hat",
+  "pan": 0.3
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 19.1,
+  "start": 19.0991,
+  "gain": -9.17,
+  "label": "beat hat",
+  "pan": -0.2
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 19.429,
+  "start": 19.4278,
+  "gain": -7.07,
+  "label": "beat hat",
+  "pan": 0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 19.667,
+  "start": 19.6658,
+  "gain": -9.52,
+  "label": "beat hat",
+  "pan": 0.15
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_1.wav",
+  "cue": 19.996,
+  "start": 19.9945,
+  "gain": -8.16,
+  "label": "beat hat",
+  "pan": -0.4
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_2.wav",
+  "cue": 20.234,
+  "start": 20.2325,
+  "gain": -7.93,
+  "label": "beat hat",
+  "pan": -0.35
+ },
+ {
+  "role": "tick",
+  "sound": "pro_hover_tick/ping",
+  "file": "tick_3.wav",
+  "cue": 20.562,
+  "start": 20.5611,
+  "gain": -11.96,
+  "label": "beat hat",
+  "pan": 0.3
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_1.wav",
+  "cue": 16.267,
+  "start": 16.267,
+  "gain": -21.68,
+  "label": "beat kick",
+  "pan": 0
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_2.wav",
+  "cue": 17.4,
+  "start": 17.4003,
+  "gain": -20.51,
+  "label": "beat kick",
+  "pan": 0
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_1.wav",
+  "cue": 17.729,
+  "start": 17.729,
+  "gain": -22.07,
+  "label": "beat kick",
+  "pan": 0
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_2.wav",
+  "cue": 19.1,
+  "start": 19.1003,
+  "gain": -16.71,
+  "label": "beat kick",
+  "pan": 0
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_1.wav",
+  "cue": 19.667,
+  "start": 19.667,
+  "gain": -16.59,
+  "label": "beat kick",
+  "pan": 0
+ },
+ {
+  "role": "drop",
+  "sound": "cut_hit/kick",
+  "file": "drop_2.wav",
+  "cue": 20.562,
+  "start": 20.5623,
+  "gain": -20.45,
+  "label": "beat kick",
+  "pan": 0
+ },
+ {
+  "role": "tock",
+  "sound": "knock/wood",
+  "file": "tock_2.wav",
+  "cue": 16.834,
+  "start": 16.7815,
+  "gain": -18.85,
+  "label": "beat snare",
+  "pan": -0.2
+ },
+ {
+  "role": "tock",
+  "sound": "knock/wood",
+  "file": "tock_3.wav",
+  "cue": 17.967,
+  "start": 17.9148,
+  "gain": -17.56,
+  "label": "beat snare",
+  "pan": 0.4
+ },
+ {
+  "role": "tock",
+  "sound": "knock/wood",
+  "file": "tock_1.wav",
+  "cue": 20.234,
+  "start": 20.1815,
+  "gain": -10.09,
+  "label": "beat snare",
+  "pan": 0.15
+ },
+ {
+  "role": "bell",
+  "sound": "mallet/glock",
+  "file": "bell_A4.wav",
+  "cue": 19.667,
+  "start": 19.647,
+  "gain": -15.6,
+  "label": "beat motif A4",
+  "pan": -0.4
+ },
+ {
+  "role": "bell",
+  "sound": "mallet/glock",
+  "file": "bell_A5.wav",
+  "cue": 20.52,
+  "start": 20.5,
+  "gain": -24.96,
+  "label": "beat motif E5 (voice gap)",
+  "pan": -0.35
+ }
+]
