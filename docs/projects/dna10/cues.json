@@ -1,0 +1,562 @@
+[
+ {
+  "role": "drop",
+  "sound": "pro_sub_drop/quick",
+  "file": "drop_1.wav",
+  "cue": 0.0,
+  "start": 0.0,
+  "gain": -19.83,
+  "label": "hook",
+  "pan": 0
+ },
+ {
+  "role": "key",
+  "sound": "fit/key/medium",
+  "file": "key_1.wav",
+  "cue": 1.63,
+  "start": 1.5368,
+  "gain": -13.0,
+  "label": "type",
+  "pan": 0.25
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_1.wav",
+  "cue": 1.7,
+  "start": 1.5385,
+  "gain": -10.24,
+  "label": "cut scan",
+  "pan": -0.15
+ },
+ {
+  "role": "snap",
+  "sound": "fit/snap/switch_flip",
+  "file": "snap_1.wav",
+  "cue": 3.44,
+  "start": 3.4392,
+  "gain": -6.5,
+  "label": "cut glitch",
+  "pan": 0.35
+ },
+ {
+  "role": "key",
+  "sound": "fit/key/medium",
+  "file": "key_2.wav",
+  "cue": 3.44,
+  "start": 3.3468,
+  "gain": -13.0,
+  "label": "type",
+  "pan": 0.1
+ },
+ {
+  "role": "pop",
+  "sound": "pro_pop_in/round",
+  "file": "pop_1.wav",
+  "cue": 5.96,
+  "start": 5.9588,
+  "gain": -11.11,
+  "label": "A",
+  "pan": -0.35
+ },
+ {
+  "role": "pop",
+  "sound": "pro_pop_in/round",
+  "file": "pop_2.wav",
+  "cue": 6.42,
+  "start": 6.4188,
+  "gain": -14.85,
+  "label": "T",
+  "pan": -0.3
+ },
+ {
+  "role": "pop",
+  "sound": "pro_pop_in/round",
+  "file": "pop_3.wav",
+  "cue": 6.92,
+  "start": 6.9188,
+  "gain": -13.41,
+  "label": "G",
+  "pan": 0.25
+ },
+ {
+  "role": "pop",
+  "sound": "pro_pop_in/round",
+  "file": "pop_4.wav",
+  "cue": 7.34,
+  "start": 7.3388,
+  "gain": -16.16,
+  "label": "C",
+  "pan": -0.15
+ },
+ {
+  "role": "tick.crisp",
+  "sound": "pro_click/tink",
+  "file": "tick-crisp_1.wav",
+  "cue": 7.84,
+  "start": 7.8388,
+  "gain": -10.0,
+  "label": "bits",
+  "pan": 0.35
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_2.wav",
+  "cue": 9.38,
+  "start": 9.2225,
+  "gain": -11.84,
+  "label": "cut scan",
+  "pan": 0.1
+ },
+ {
+  "role": "tick",
+  "sound": "fit/tick/domino",
+  "file": "tick_1.wav",
+  "cue": 9.4,
+  "start": 9.3958,
+  "gain": -5.0,
+  "label": "counter",
+  "pan": -0.35
+ },
+ {
+  "role": "tick",
+  "sound": "fit/tick/domino",
+  "file": "tick_2.wav",
+  "cue": 9.6,
+  "start": 9.5955,
+  "gain": -5.0,
+  "label": "counter",
+  "pan": -0.3
+ },
+ {
+  "role": "tick",
+  "sound": "fit/tick/domino",
+  "file": "tick_3.wav",
+  "cue": 9.8,
+  "start": 9.7958,
+  "gain": -5.0,
+  "label": "counter",
+  "pan": 0.25
+ },
+ {
+  "role": "bell",
+  "sound": "pluck/kalimba",
+  "file": "bell_G4.wav",
+  "cue": 11.7,
+  "start": 11.6968,
+  "gain": -28.03,
+  "label": "750 lands",
+  "pan": -0.15
+ },
+ {
+  "role": "hit",
+  "sound": "pro_impact/short",
+  "file": "hit_1.wav",
+  "cue": 13.04,
+  "start": 13.04,
+  "gain": -17.14,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "land",
+  "sound": "pro_pop_in/deep",
+  "file": "land_1.wav",
+  "cue": 13.3,
+  "start": 13.2988,
+  "gain": -16.59,
+  "label": "bars",
+  "pan": 0
+ },
+ {
+  "role": "snap",
+  "sound": "fit/snap/switch_flip",
+  "file": "snap_2.wav",
+  "cue": 14.91,
+  "start": 14.9078,
+  "gain": -6.5,
+  "label": "cut glitch",
+  "pan": -0.35
+ },
+ {
+  "role": "tick.crisp",
+  "sound": "pro_click/tink",
+  "file": "tick-crisp_2.wav",
+  "cue": 16.6,
+  "start": 16.5988,
+  "gain": -12.8,
+  "label": "grid",
+  "pan": -0.3
+ },
+ {
+  "role": "tick.crisp",
+  "sound": "pro_click/tink",
+  "file": "tick-crisp_3.wav",
+  "cue": 17.0,
+  "start": 16.9988,
+  "gain": -10.57,
+  "label": "grid",
+  "pan": 0.25
+ },
+ {
+  "role": "tick.crisp",
+  "sound": "pro_click/tink",
+  "file": "tick-crisp_1.wav",
+  "cue": 17.4,
+  "start": 17.3988,
+  "gain": -13.63,
+  "label": "grid",
+  "pan": -0.15
+ },
+ {
+  "role": "click.confirm",
+  "sound": "pro_notify/ding_2045",
+  "file": "click-confirm_1.wav",
+  "cue": 19.8,
+  "start": 19.8,
+  "gain": -19.38,
+  "label": "cut flash",
+  "pan": 0.35
+ },
+ {
+  "role": "bell",
+  "sound": "pluck/kalimba",
+  "file": "bell_A4.wav",
+  "cue": 19.8,
+  "start": 19.7968,
+  "gain": -19.91,
+  "label": "start",
+  "pan": 0.1
+ },
+ {
+  "role": "tock",
+  "sound": "tap/knuckle",
+  "file": "tock_1.wav",
+  "cue": 20.66,
+  "start": 20.6588,
+  "gain": -13.4,
+  "label": "stop",
+  "pan": -0.35
+ },
+ {
+  "role": "tock",
+  "sound": "tap/knuckle",
+  "file": "tock_2.wav",
+  "cue": 21.0,
+  "start": 20.9985,
+  "gain": -11.51,
+  "label": "stop",
+  "pan": -0.3
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_3.wav",
+  "cue": 21.48,
+  "start": 21.3195,
+  "gain": -15.38,
+  "label": "cut scan",
+  "pan": 0.25
+ },
+ {
+  "role": "hit",
+  "sound": "pro_impact/short",
+  "file": "hit_2.wav",
+  "cue": 22.8,
+  "start": 22.8,
+  "gain": -16.63,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "snap",
+  "sound": "fit/snap/switch_flip",
+  "file": "snap_1.wav",
+  "cue": 23.77,
+  "start": 23.7692,
+  "gain": -6.59,
+  "label": "cut glitch",
+  "pan": 0.35
+ },
+ {
+  "role": "click",
+  "sound": "fit/click/floss_lid",
+  "file": "click_1.wav",
+  "cue": 23.77,
+  "start": 23.766,
+  "gain": -4.5,
+  "label": "bracket",
+  "pan": 0.1
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_1.wav",
+  "cue": 24.85,
+  "start": 24.6885,
+  "gain": -13.3,
+  "label": "cut scan",
+  "pan": -0.35
+ },
+ {
+  "role": "click.confirm",
+  "sound": "pro_notify/ding_2045",
+  "file": "click-confirm_1.wav",
+  "cue": 27.4,
+  "start": 27.4,
+  "gain": -20.94,
+  "label": "cut flash",
+  "pan": -0.3
+ },
+ {
+  "role": "bell",
+  "sound": "pluck/kalimba",
+  "file": "bell_C5.wav",
+  "cue": 29.0,
+  "start": 28.9968,
+  "gain": -20.14,
+  "label": "1.5%",
+  "pan": 0.25
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_2.wav",
+  "cue": 30.32,
+  "start": 30.1625,
+  "gain": -11.41,
+  "label": "cut scan",
+  "pan": -0.15
+ },
+ {
+  "role": "hit",
+  "sound": "pro_impact/short",
+  "file": "hit_3.wav",
+  "cue": 32.26,
+  "start": 32.26,
+  "gain": -19.17,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "key",
+  "sound": "fit/key/medium",
+  "file": "key_3.wav",
+  "cue": 33.0,
+  "start": 32.9078,
+  "gain": -13.0,
+  "label": "diff",
+  "pan": 0.1
+ },
+ {
+  "role": "bell",
+  "sound": "pluck/kalimba",
+  "file": "bell_D5.wav",
+  "cue": 33.2,
+  "start": 33.1968,
+  "gain": -23.1,
+  "label": "99.9",
+  "pan": -0.35
+ },
+ {
+  "role": "snap",
+  "sound": "fit/snap/switch_flip",
+  "file": "snap_2.wav",
+  "cue": 35.01,
+  "start": 35.0078,
+  "gain": -11.01,
+  "label": "cut glitch",
+  "pan": -0.3
+ },
+ {
+  "role": "hit",
+  "sound": "pro_impact/short",
+  "file": "hit_1.wav",
+  "cue": 35.12,
+  "start": 35.12,
+  "gain": -18.04,
+  "label": "BUG stamp",
+  "pan": 0
+ },
+ {
+  "role": "click.confirm",
+  "sound": "pro_notify/ding_2045",
+  "file": "click-confirm_1.wav",
+  "cue": 37.12,
+  "start": 37.12,
+  "gain": -18.57,
+  "label": "cut flash",
+  "pan": -0.15
+ },
+ {
+  "role": "drop",
+  "sound": "pro_sub_drop/quick",
+  "file": "drop_1.wav",
+  "cue": 37.12,
+  "start": 37.12,
+  "gain": -21.67,
+  "label": "warning",
+  "pan": 0
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_3.wav",
+  "cue": 38.55,
+  "start": 38.3895,
+  "gain": -8.41,
+  "label": "cut scan",
+  "pan": 0.1
+ },
+ {
+  "role": "tock",
+  "sound": "tap/knuckle",
+  "file": "tock_3.wav",
+  "cue": 39.33,
+  "start": 39.3288,
+  "gain": -10.69,
+  "label": "author null",
+  "pan": -0.35
+ },
+ {
+  "role": "hit",
+  "sound": "pro_impact/short",
+  "file": "hit_2.wav",
+  "cue": 40.53,
+  "start": 40.53,
+  "gain": -14.63,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "snap",
+  "sound": "fit/snap/switch_flip",
+  "file": "snap_1.wav",
+  "cue": 42.9,
+  "start": 42.8992,
+  "gain": -6.98,
+  "label": "cut glitch",
+  "pan": 0.25
+ },
+ {
+  "role": "tock",
+  "sound": "tap/knuckle",
+  "file": "tock_1.wav",
+  "cue": 43.2,
+  "start": 43.1988,
+  "gain": -10.41,
+  "label": "strike",
+  "pan": -0.15
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_1.wav",
+  "cue": 44.19,
+  "start": 44.0285,
+  "gain": -10.66,
+  "label": "cut scan",
+  "pan": 0.35
+ },
+ {
+  "role": "pop",
+  "sound": "pro_pop_in/round",
+  "file": "pop_1.wav",
+  "cue": 46.0,
+  "start": 45.9988,
+  "gain": -13.77,
+  "label": "grid",
+  "pan": 0.1
+ },
+ {
+  "role": "snap",
+  "sound": "fit/snap/switch_flip",
+  "file": "snap_2.wav",
+  "cue": 47.11,
+  "start": 47.1078,
+  "gain": -7.13,
+  "label": "cut glitch",
+  "pan": -0.35
+ },
+ {
+  "role": "hit",
+  "sound": "pro_impact/short",
+  "file": "hit_3.wav",
+  "cue": 48.84,
+  "start": 48.84,
+  "gain": -21.2,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_2.wav",
+  "cue": 50.26,
+  "start": 50.1025,
+  "gain": -11.38,
+  "label": "cut scan",
+  "pan": 0.25
+ },
+ {
+  "role": "pop",
+  "sound": "pro_pop_in/round",
+  "file": "pop_2.wav",
+  "cue": 52.35,
+  "start": 52.3488,
+  "gain": -19.02,
+  "label": "subscribe",
+  "pan": -0.15
+ },
+ {
+  "role": "hit",
+  "sound": "pro_impact/short",
+  "file": "hit_1.wav",
+  "cue": 52.43,
+  "start": 52.43,
+  "gain": -20.77,
+  "label": "cut punch",
+  "pan": 0
+ },
+ {
+  "role": "snap",
+  "sound": "fit/snap/switch_flip",
+  "file": "snap_1.wav",
+  "cue": 53.24,
+  "start": 53.2392,
+  "gain": -6.5,
+  "label": "cut glitch",
+  "pan": 0.1
+ },
+ {
+  "role": "whoosh.long",
+  "sound": "whoosh_big/swell",
+  "file": "whoosh-long_1.wav",
+  "cue": 54.5,
+  "start": 54.0635,
+  "gain": -19.11,
+  "label": "next video",
+  "pan": -0.35
+ },
+ {
+  "role": "whoosh.short",
+  "sound": "whoosh_fast/tight",
+  "file": "whoosh-short_3.wav",
+  "cue": 56.23,
+  "start": 56.0695,
+  "gain": -16.03,
+  "label": "cut scan",
+  "pan": -0.3
+ },
+ {
+  "role": "land",
+  "sound": "pro_pop_in/deep",
+  "file": "land_2.wav",
+  "cue": 56.23,
+  "start": 56.2288,
+  "gain": -14.4,
+  "label": "loop",
+  "pan": 0
+ }
+]
