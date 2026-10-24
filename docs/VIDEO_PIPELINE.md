@@ -515,3 +515,17 @@ VMAF: статический ffmpeg с libvmaf (`/workspace/tools/ffmpeg-7.0.2-a
   - каждый раз новая схема вступления и структура.
 - **Тестируем (A/B):** 45 с против 58 с, хук-вопрос против хука-цифры, обложка 3 слова против 6 (через Trial reels).
 - **Плюс:** сводка аналитики каждые 10 роликов.
+
+## Саунд-дизайн через earshot (с onc10v2, 2026-10-24)
+
+Все SFX — только из earshot v0.4 (MIT, код, без записей). Музыка и голос — отдельно, как раньше.
+
+1. Установка на боксе: `~/tools/earshot` (venv `.venv`, CLI `~/tools/earshot/.venv/bin/earshot`, torch CPU, модели в `~/tools/earshot/.cache/hf`).
+2. `earshot kit init --preset launch -o kit.json` → при необходимости добавить роли (у нас `glitch` = `glitch/mid`) → `earshot kit render kit.json --out kit`.
+3. Карта роли по типу склейки: punch→`hit` (cut_hit/punch), whip→`whoosh.short` (пик +37 мс после склейки), flash→`snap` (shutter/dslr), glitch→`glitch`, dip→`land` (pop-in), хук→`drop` (cut_hit/kick), счётчики→`tick` (ряд ≥66 мс), выход числа→`bell` (glock) + тихий `drop`, точки/CTA→`pop` (≥114 мс), штамп→`tock`, финал→`riser`.
+4. Позиция: `kit.place(take, role, cue)`; уровень: `kit.gain_db(take, role, kit.bed_level(bed, t))`, затем потолок: SFX не ближе 9 dB к громкости голоса (K-weighted, макс. 50 мс в окне −0.1…+0.3 с).
+5. Лёгкая панорама SFX (±0.2…0.4), низ (hit/drop/land) — в центре.
+6. Сведение: vo + bed (−19 dB к голосу) + sfx → loudnorm −14 LUFS, TP −1.5 (без alimiter с авто-level — он поднимает громкость).
+7. `earshot critique final.mp4` до/после; править major, minor «mono» и «thin bottom» — следствие моно голоса и подложки.
+
+Пример: `docs/projects/onc10v2/mix2.py`, звуки `audio/sfx/earshot/onc10v2/`.
