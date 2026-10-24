@@ -1,0 +1,336 @@
+A1 acoustic_hit 13 / 23 vowelcount_ok 17
+    расколоть 2 2 | r a s k a l o d
+    землю 0 0 | z j e m l u
+    квинтиллиона 3 2 | k v i n tʲ i l i o n e
+    хиросим 2 0 | x i r a sʲ i m j
+    энергия 1 1 | n e r ɡ i
+    раскола 1 2 | r a s k o l e
+    земли 1 1 | z i m l i
+    дорога 1 1 | d a r o ɡ a
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 1 | a s t r o i
+    чиксулуб 2 2 | tʃ y k s u l u p
+    мощнее 1 1 | m a ʃ ɲ e f
+    арсенала 2 1 | r s i n a l a
+    земля 1 1 | z i m l e
+    ядерная 0 0 | a dʲ i r n aɪ
+    зима 1 0 | z i m a a
+    оставит 1 1 | a s t aɪ v e
+    еды 1 0 | j i d i
+    больше 0 0 | b o l ʃ i
+    пяти 1 1 | p i ts i
+    миллиардов 2 0 | m i l i a r d o v
+    человек 2 0 | tʃ i l a v e k
+    атмосфера 2 2 | a t m o s f e r a
+A2 acoustic_hit 12 / 23 vowelcount_ok 16
+    расколоть 2 2 | r o s k a l o d z
+    землю 0 1 | z e m l o n
+    квинтиллиона 3 3 | k v i n tʲ i l i o n y
+    хиросим 2 0 | x i r a s i m j
+    энергия 1 2 | e n e r ɡ i
+    раскола 1 2 | r a s k o l e
+    земли 1 1 | z i m l i
+    дорога 1 1 | d a r o ɡ ʌ
+    квадриллион 3 3 | k v a d r i l i o n
+    астероид 2 2 | a s t i r o j
+    чиксулуб 2 1 | tʃ y k s u l u p
+    мощнее 1 1 | m a ʃ ɲ e e f
+    арсенала 2 1 | r s j i n a l a
+    земля 1 1 | z i m b l e
+    ядерная 0 0 | j a dʲ e r n
+    зима 1 0 | z i m a a
+    оставит 1 1 | a s t aɪ v i d
+    еды 1 0 | j i d i
+    больше 0 0 | b o l ʃ i
+    пяти 1 1 | p i tʲ i
+    миллиардов 2 0 | m i l a r d o f
+    человек 2 1 | tʃ i l a v e k
+    атмосфера 2 1 | a t m o s f e r a
+B1 acoustic_hit 15 / 23 vowelcount_ok 15
+    расколоть 2 2 | r a s k a l o d z
+    землю 0 0 | z e m l u
+    квинтиллиона 3 2 | k v i n ts i l i o n
+    хиросим 2 0 | x i r a sʲ i u m
+    энергия 1 2 | e n e r ɡ i a r
+    раскола 1 2 | r a s k o l a
+    земли 1 1 | z i m l i
+    дорога 1 1 | d a r o ɡ ʌ
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 2 | a s t i r o
+    чиксулуб 2 2 | tʃ y k s u l u p
+    мощнее 1 1 | m a ʃ n e
+    арсенала 2 1 | r s j i n a l a
+    земля 1 1 | z i m b l e
+    ядерная 0 0 | j a d i r n aɪ
+    зима 1 1 | z i m a
+    оставит 1 1 | a s t a v e t
+    еды 1 1 | i d i
+    больше 0 0 | b o l ʃ i
+    пяти 1 1 | p i ts iː
+    миллиардов 2 0 | m i l i a r d ʌ f
+    человек 2 1 | tʃ i l a v i k
+    атмосфера 2 2 | a t m o s f e r a
+B2 acoustic_hit 12 / 23 vowelcount_ok 12
+    расколоть 2 2 | r a s k a l o d
+    землю 0 0 | z e m b l o
+    квинтиллиона 3 2 | k v i n t i l i o n ʌ
+    хиросим 2 0 | x i r a sʲ i m j
+    энергия 1 2 | e n e r ɡ i
+    раскола 1 1 | r a s k o l e
+    земли 1 0 | ʒ i m u l i
+    дорога 1 0 | d a r o ɡ ʌ
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 2 | a s t i r oɪ
+    чиксулуб 2 1 | tʃ y k s u l u p
+    мощнее 1 1 | m a ʃ ɲ e e
+    арсенала 2 1 | a r s j u n a l
+    земля 1 1 | z i m b l e
+    ядерная 0 0 | a dʲ e r n aɪ
+    зима 1 1 | z i m a a
+    оставит 1 1 | a s t a v i t
+    еды 1 0 | j b i
+    больше 0 0 | b o l ʃ
+    пяти 1 1 | p i tʲ i
+    миллиардов 2 1 | m i l i a r d ʌ f
+    человек 2 1 | tʃ i l a i k
+    атмосфера 2 2 | a t m a s f e r a
+C1 acoustic_hit 15 / 23 vowelcount_ok 17
+    расколоть 2 2 | r a s k a l o z
+    землю 0 0 | z j e m l u
+    квинтиллиона 3 2 | k v i n ts i l i o n a
+    хиросим 2 0 | x i r a sʲ i m j
+    энергия 1 2 | e n e r ɡ e
+    раскола 1 1 | r a s k o l e
+    земли 1 1 | z i m l i
+    дорога 1 1 | d a r o ɡ a
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 2 | a s t i r oɪ
+    чиксулуб 2 1 | tʃ y k s u l u p
+    мощнее 1 1 | m a ʃ ɲ e e
+    арсенала 2 1 | r s i n a l a
+    земля 1 1 | z i m l e
+    ядерная 0 0 | a dʲ e r n aɪ z
+    зима 1 1 | z i m a a
+    оставит 1 1 | a s t a v i t
+    еды 1 1 | ɡ i d i
+    больше 0 0 | b o l ʃ i
+    пяти 1 1 | p i tʲ i m
+    миллиардов 2 0 | m i l j a r d ʌ f
+    человек 2 1 | tʃ i l a v i k
+    атмосфера 2 2 | a t m o s f e r a
+C2 acoustic_hit 13 / 23 vowelcount_ok 15
+    расколоть 2 2 | r a s k a l o d z
+    землю 0 0 | z e m l o
+    квинтиллиона 3 1 | k v i n ts i l j o n y
+    хиросим 2 0 | x i r a sʲ i m
+    энергия 1 2 | e n e r ɡ i
+    раскола 1 1 | r a s k o l e
+    земли 1 0 | z i m l i
+    дорога 1 1 | d a r o ɡ ʌ
+    квадриллион 3 1 | k v a d r i l i o n
+    астероид 2 2 | a s t e r oɪ
+    чиксулуб 2 2 | tʃ y k s u l u p
+    мощнее 1 1 | m a ʃ n e e f
+    арсенала 2 1 | r s i n a l a
+    земля 1 1 | z i m l e
+    ядерная 0 0 | a d i r n a
+    зима 1 0 | z i m a a
+    оставит 1 1 | a s t a v i d
+    еды 1 0 | i b i
+    больше 0 0 | b o l ʃ i
+    пяти 1 1 | p i ts i m
+    миллиардов 2 0 | m i l e a r d ʌ f
+    человек 2 1 | tʃ i l a v e k
+    атмосфера 2 2 | a t m a s f e r a
+D1 acoustic_hit 13 / 23 vowelcount_ok 16
+    расколоть 2 2 | r o s k a l o
+    землю 0 0 | z e m l o n
+    квинтиллиона 3 2 | k v i n t i l i o n e
+    хиросим 2 0 | x i r a sʲ i m
+    энергия 1 2 | e n e r ɡ i
+    раскола 1 1 | r a s k o l e
+    земли 1 0 | z i m l i
+    дорога 1 1 | d a r o ɡ a
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 2 | a s t i r oɪ
+    чиксулуб 2 2 | tʃ i k s u l u p
+    мощнее 1 0 | m o ʃ ɲ e
+    арсенала 2 1 | r s j u n a l a
+    земля 1 1 | z i m b l a
+    ядерная 0 0 | a d i r n aɪ
+    зима 1 1 | z i m w a a
+    оставит 1 1 | a s t a v i d
+    еды 1 1 | j i d i
+    больше 0 0 | b o l ʃ i
+    пяти 1 1 | p i t tʲ i
+    миллиардов 2 1 | m i l j a r d ʌ v f
+    человек 2 1 | tʃ i l a v e k
+    атмосфера 2 1 | a t m o s f e r a
+D2 acoustic_hit 11 / 23 vowelcount_ok 16
+    расколоть 2 2 | r o s k a l o d z
+    землю 0 0 | z e m l o
+    квинтиллиона 3 0 | k v i n t i l j n ʌ
+    хиросим 2 1 | x i r a s i m
+    энергия 1 2 | e n e r ɡ i
+    раскола 1 1 | r a s k o l e
+    земли 1 0 | z i m l i
+    дорога 1 1 | d a r o ɡ a
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 2 | a s t i r o
+    чиксулуб 2 2 | tʃ i k s u ʁ u p
+    мощнее 1 0 | m o ʃ ɲ e
+    арсенала 2 1 | r s j u n a l a
+    земля 1 1 | z i m l e
+    ядерная 0 1 | j a dʒ i r n aɪ
+    зима 1 0 | z i m a
+    оставит 1 1 | a s t a v e t
+    еды 1 0 | i b i
+    больше 0 0 | b o l ʃ y
+    пяти 1 1 | p i tʲ i m
+    миллиардов 2 1 | m i l j a r d ʌ v
+    человек 2 1 | tʃ i l a v i k
+    атмосфера 2 2 | a t m o s f e r a
+E1 acoustic_hit 14 / 23 vowelcount_ok 16
+    расколоть 2 2 | r o s k a l o d z
+    землю 0 0 | z j e m l o
+    квинтиллиона 3 1 | k v i n t i l i o n y
+    хиросим 2 0 | x i r a sʲ i m j
+    энергия 1 2 | e n e r ɡ e
+    раскола 1 2 | r a s k o l e z
+    земли 1 1 | z i m l i
+    дорога 1 1 | d a r o ɡ a
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 2 | a s t e r o
+    чиксулуб 2 2 | t y k s o l u p
+    мощнее 1 1 | m a ʃ n e e
+    арсенала 2 2 | a r s j u n a l
+    земля 1 1 | z i m l e
+    ядерная 0 0 | a d e r n a
+    зима 1 1 | z i m a a
+    оставит 1 1 | a s t aɪ v i d
+    еды 1 0 | j i d
+    больше 0 1 | b o l ʃ i
+    пяти 1 1 | p i tʲ i
+    миллиардов 2 1 | m i l i a r d ʌ f
+    человек 2 1 | tʃ i l a v i k
+    атмосфера 2 2 | a t m o s f e r a
+E2 acoustic_hit 11 / 23 vowelcount_ok 15
+    расколоть 2 2 | r a s k a l o d z
+    землю 0 1 | z i e m l o
+    квинтиллиона 3 1 | k v i n t i l i o n y
+    хиросим 2 1 | x i r a sʲ i m
+    энергия 1 1 | e n e r ɡ e
+    раскола 1 1 | r a s k o l a
+    земли 1 0 | z i m l i
+    дорога 1 1 | d a r o ɡ ʌ
+    квадриллион 3 1 | k v a d r i l i j o n
+    астероид 2 1 | a s t r oɪ j t tʃ
+    чиксулуб 2 1 | tʃ i k s a l u p
+    мощнее 1 1 | m a ʃ ɲ i e
+    арсенала 2 1 | r s j o n a l a
+    земля 1 1 | z i m l e
+    ядерная 0 0 | a d e r n aɪ z
+    зима 1 1 | z i m a a
+    оставит 1 1 | a s t a v i d
+    еды 1 0 | i d i
+    больше 0 1 | b o l ʃ i
+    пяти 1 1 | p i tʲ i
+    миллиардов 2 0 | m i l i a r d ʌ f
+    человек 2 1 | tʃ i l a v i k
+    атмосфера 2 2 | a t m o s f e r a
+M2a acoustic_hit 17 / 23 vowelcount_ok 19
+    расколоть 2 2 | r a s k a o d
+    землю 0 0 | z e m ɭʲ u
+    квинтиллиона 3 3 | k v i n tʲ i l e o n a
+    хиросим 2 0 | x i r sʲ i m j
+    энергия 1 1 | e n e r ɡ i r
+    раскола 1 1 | r a s k o l a
+    земли 1 1 | z i m l i
+    дорога 1 0 | d a r o ɡ a
+    квадриллион 3 2 | k v a d rʲ i l e o n
+    астероид 2 1 | a s t e r o j i
+    чиксулуб 2 2 | tʃ i k s u l u p
+    мощнее 1 1 | m a ʃ ɲ e j e
+    арсенала 2 2 | a r s i n a l a
+    земля 1 1 | z i m l a
+    ядерная 0 0 | a d i r n aɪ
+    зима 1 0 | z i m a
+    оставит 1 1 | a s t a v i t d
+    еды 1 1 | i d i
+    больше 0 0 | b o l ʃ e
+    пяти 1 1 | p i i
+    миллиардов 2 0 | m i l i a r d ʌ f
+    человек 2 2 | tʃ i l a v e k
+    атмосфера 2 2 | a t m a s f e r a
+M2b acoustic_hit 16 / 23 vowelcount_ok 20
+    расколоть 2 1 | r a s k a o j d
+    землю 0 0 | z j e m ɭʲ o
+    квинтиллиона 3 2 | k v i n t i l e o n ʌ
+    хиросим 2 1 | x i r a sʲ i m j
+    энергия 1 0 | e n e r ɡ i a
+    раскола 1 1 | r a s k o l a
+    земли 1 1 | z i m l i
+    дорога 1 1 | d a r o ɡ a
+    квадриллион 3 2 | k v a d rʲ i l e o n
+    астероид 2 1 | a s t e r o j i t
+    чиксулуб 2 2 | t tʃ i k s u l u p
+    мощнее 1 1 | m a ʃ ɲ e j e
+    арсенала 2 2 | a r sʲ j u n ɑ l a
+    земля 1 1 | z i m ɭʲ a
+    ядерная 0 0 | e dʲ i r n a n i
+    зима 1 1 | z i m a a
+    оставит 1 1 | a s t a v i t
+    еды 1 1 | i d i
+    больше 0 1 | b o l ʃ i
+    пяти 1 1 | p i tʲ i
+    миллиардов 2 2 | m i l e a r d ʌ f
+    человек 2 2 | tʃ i l a v e k
+    атмосфера 2 2 | a t m o s f e r a
+V3a acoustic_hit 16 / 23 vowelcount_ok 14
+    расколоть 2 1 | r o s k a l o tʲ
+    землю 0 0 | ʒ e m l o
+    квинтиллиона 3 3 | k v i n ts i l e o n y
+    хиросим 2 1 | x i r a sʲ i m j
+    энергия 1 1 | e n e r ɡ i r
+    раскола 1 1 | r a s k o l e
+    земли 1 1 | ʒ i m l i
+    дорога 1 0 | d a r o ɡ ʌ
+    квадриллион 3 3 | k v a d r i l i o n
+    астероид 2 2 | a s t a r o t
+    чиксулуб 2 2 | tʃ i k s u l u p
+    мощнее 1 1 | m a ʃ ɲ e
+    арсенала 2 1 | r s j o n a l a
+    земля 1 1 | z i m ɭʲ a
+    ядерная 0 0 | j a e r n e
+    зима 1 1 | z i m a a
+    оставит 1 1 | a s t a v e d
+    еды 1 1 | i d i
+    больше 0 0 | b o l ʃ y
+    пяти 1 1 | p i ts i
+    миллиардов 2 1 | m i l j a r d ʌ f
+    человек 2 1 | tʃ i l a v e k
+    атмосфера 2 1 | a t m a s f e r
+V3b acoustic_hit 14 / 23 vowelcount_ok 14
+    расколоть 2 2 | r o s k a l o
+    землю 0 0 | z e m l u
+    квинтиллиона 3 3 | k v i n ts i l i o n y
+    хиросим 2 1 | x i r aɪ sʲ i m j
+    энергия 1 0 | n e r ɡ i r
+    раскола 1 1 | r a s k o l e
+    земли 1 0 | z i m l i
+    дорога 1 0 | d a r o ɡ ʌ
+    квадриллион 3 2 | k v a d r i l i o n
+    астероид 2 2 | a s t a r o i
+    чиксулуб 2 2 | tʲ y k s o l u p
+    мощнее 1 1 | m a ʃ ɲ e ɪ
+    арсенала 2 0 | r sʲ j u n ɑ l ʌ
+    земля 1 0 | z m ɭʲ a
+    ядерная 0 0 | a dʲ i r n a z
+    зима 1 1 | z i m a a
+    оставит 1 1 | a s t aɪ v i d
+    еды 1 1 | i d i
+    больше 0 0 | b o l ʃ ʌ
+    пяти 1 1 | p i tʲ i
+    миллиардов 2 0 | m i j a r d ʌ v
+    человек 2 1 | tʃ i l a v i k
+    атмосфера 2 2 | a t m a s f e r
