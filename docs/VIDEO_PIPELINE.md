@@ -529,3 +529,13 @@ VMAF: статический ffmpeg с libvmaf (`/workspace/tools/ffmpeg-7.0.2-a
 7. `earshot critique final.mp4` до/после; править major, minor «mono» и «thin bottom» — следствие моно голоса и подложки.
 
 Пример: `docs/projects/onc10v2/mix2.py`, звуки `audio/sfx/earshot/onc10v2/`.
+
+
+## Text-fit check (mandatory, since gar10v2)
+- Every text element is drawn through a measured layout helper: ink bbox from PIL font metrics (`font.getbbox(text, anchor="ls")`) is compared to its container (card, pill, chip, table cell, stamp slot).
+- Inner padding >= 24 px on all sides; pill/chip height is derived from the font line box (incl. Ё/Й and descenders) + 2x24 px, never from cap height.
+- If text does not fit: shrink the font down to the minimum (body >= 42 px, meter labels >= 36 px, HUD/source lines >= 24 px), then wrap words, then grow the card vertically. Cards stack automatically (card height = sum of line boxes + gaps + padding), so nothing is placed at hard-coded y offsets.
+- All text and all top-level boxes must stay inside the safe zone x 120-780, y 270-1250, and top-level boxes (cards, meters, captions, chips, stamps, buttons, avatar badge, source line) must not overlap each other. Stamps get their own slot (rotation included in the bbox) and never sit on top of text.
+- The renderer runs the check on every frame and aborts (`TEXT-FIT FAIL frame N`) on any overflow, safe-zone breach or overlap. `python render.py 0 N check` runs the check without encoding.
+- Before encoding, dump a contact sheet with one frame per card at full visibility and look at it.
+- Reference implementation: `docs/projects/gar10v2/render.py` (Stack / pill / stamp_fit / check).
