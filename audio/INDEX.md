@@ -176,6 +176,9 @@
 | `sfx/ui/ui_maximize_06.ogg` | 0.21 | Interface Sounds: maximize_003 | gta6 | Kenney, «Interface Sounds: maximize_003», https://kenney.nl/assets/interface-sounds | CC0 1.0 | 1 |
 | `sfx/ui/ui_tick_05.ogg` | 0.02 | Interface Sounds: tick_002 | gta6 | Kenney, «Interface Sounds: tick_002», https://kenney.nl/assets/interface-sounds | CC0 1.0 | 1 |
 | `sfx/ui/ui_tick_05__sfx_library.ogg` | 0.02 | Interface Sounds: tick_002 | gta6 | Kenney, «Interface Sounds: tick_002», https://kenney.nl/assets/interface-sounds | CC0 1.0 | 1 |
+| `sfx/ui/picker_tick_1.wav` | 0.04 | тик «колеса выбора даты» (как в iPhone), счётчики; любимый тик Markus | sim10, gar10, bang10v2 | earshot kit, звук pro_hover_tick/ping (seed 2094108523) | собственный (сгенерировано earshot) | 1 |
+| `sfx/ui/picker_tick_2.wav` | 0.04 | тик «колеса выбора даты» (как в iPhone), счётчики; любимый тик Markus | sim10, gar10, bang10v2 | earshot kit, звук pro_hover_tick/ping (seed 2094108524) | собственный (сгенерировано earshot) | 1 |
+| `sfx/ui/picker_tick_3.wav` | 0.04 | тик «колеса выбора даты» (как в iPhone), счётчики; любимый тик Markus | sim10, gar10, bang10v2 | earshot kit, звук pro_hover_tick/ping (seed 2094108525) | собственный (сгенерировано earshot) | 1 |
 | `sfx/whoosh/pro_whoosh_big_long.wav` | 1.12 | — | lhc, moon, neutron | не записано (на машине: halluc/v2/sfx2) | неизвестно | 1 |
 | `sfx/whoosh/swipe_flick.wav` | 0.57 | — | halluc, exoplanet_v7, depth2d, lhc, universe93, moon, neutron, nuke | не записано (на машине: halluc/v2/sfx2) | неизвестно | 1 |
 | `sfx/whoosh/swipe_paper.wav` | 0.77 | — | halluc, exoplanet_v7, depth2d, lhc, universe93, moon, neutron, nuke | не записано (на машине: halluc/v2/sfx2) | неизвестно | 1 |
