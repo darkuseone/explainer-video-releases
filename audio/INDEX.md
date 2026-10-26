@@ -197,6 +197,28 @@
 | `sfx/whoosh/whoosh_sharp.wav` | 1.10 | — | Redshift-shorts | Redshift-shorts/assets (sfx) | не записана | 13 |
 | `sfx/whoosh/whoosh_soft.wav` | 1.10 | — | Redshift-shorts | Redshift-shorts/assets (sfx) | не записана | 13 |
 
+
+## ЗАПРЕЩЕНО (BANNED) — не использовать (Markus, 2026-10-26, bang10v3)
+
+Файлы не удалены, но в новых роликах их не ставить: звучат плоско, звонко, «нейрослопно».
+
+| файл / звук | где был | чем заменить |
+|---|---|---|
+| `sfx/earshot/onc10v2/bell_*.wav` (earshot `mallet/glock`, роль `bell`, все высоты A4…E6) — «дзынь» в конце счётчика и на акцентах | onc10v2, sim10, gar10, bang10v2/v3 | `sfx/warm/counter_land_latch.wav` |
+| `sfx/earshot/onc10v2/pop_1…4.wav` (earshot `ui_pop/soft`, роль `pop`) — «поп» при появлении крупного текста и карточек | onc10v2, sim10, gar10, bang10v2/v3 | `sfx/warm/reveal_slide_thud_1…3.wav` |
+| `sfx/ui/pop1.wav`, `sfx/ui/pop2.wav`, `sfx/ui/ding1.wav`, `sfx/ui/ding2.wav`, `sfx/ui/fit_pop_lip_pop.wav` (тот же тип: чистый тон/синус) | старые ролики | то же |
+
+## Тёплые слои (warm, с bang10v4)
+
+Собраны кодом (`sfx/warm/make_warm.py`) из звуков earshot bank + фильтрованного шума и короткой «комнаты». Лицензия: собственный (MIT-код earshot). Проверка спектра: доля 2–6 кГц ≤ 0,03, нет чистого тона (у старого bell peak/mean спектра 1157, flatness 0).
+
+| файл | длина, с | что это | ролики | состав |
+|---|---|---|---|---|
+| `sfx/warm/counter_land_latch.wav` | 1.0 | конец счётчика: мягкий низко-средний механический «клац»-защёлка + глухой удар + короткий воздушный хвост | bang10v4 | knock/wood (LP 3 кГц) + fit/key/thock (LP 2,5 кГц, −6 дБ) + cut_hit/punch (−7 дБ) + шум 500–2600 Гц, спад 0,45 с, комната 0,4 с |
+| `sfx/warm/reveal_slide_thud_1.wav` | 0.75 | появление крупного текста/карточки: бумажный слайд-въезд + мягкий низкий «тук», удар на 0,19 с (ставить на t−0,19) | bang10v4 | swipe/paper (LP 3,2 кГц) + fit/land.light/fingertip_book |
+| `sfx/warm/reveal_slide_thud_2.wav` | 0.75 | то же, тканевый слайд | bang10v4 | swipe/cloth (LP 3,8 кГц) + pro_tap/soft |
+| `sfx/warm/reveal_slide_thud_3.wav` | 0.75 | то же, бархатный слайд + глубже | bang10v4 | swipe/velvet (LP 3,8 кГц) + pro_pop_in/deep |
+
 ## Не положено: Mixkit
 
 Лицензия Mixkit запрещает распространять файлы как библиотеку, а этот репозиторий публичный. Эти файлы нужно скачивать заново по ссылке и класть в `/workspace/exoplanet_explainer/sfx_library/` (музыка nuke — `music/cyberpunk_04_144bpm.mp3`).

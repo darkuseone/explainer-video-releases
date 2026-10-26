@@ -530,6 +530,8 @@ VMAF: статический ffmpeg с libvmaf (`/workspace/tools/ffmpeg-7.0.2-a
 
 Пример: `docs/projects/onc10v2/mix2.py`, звуки `audio/sfx/earshot/onc10v2/`.
 
+**Запрет (Markus, 2026-10-26):** роли `bell` (mallet/glock, «дзынь» на конце счётчика) и `pop` (ui_pop/soft, «поп» на появлении текста/карточек) больше не использовать: плоско, звонко, «нейрослопно». Вместо них `audio/sfx/warm/counter_land_latch.wav` (конец счётчика, на −13 дБ) и `audio/sfx/warm/reveal_slide_thud_1…3.wav` (текст/карточки, ставить на t−0,19 с, −19 дБ, чередовать). Новые акценты делать слоями: короткий удар/дерево + низкий тук + фильтрованный шумовой хвост, LP ≤ 3–4 кГц; проверять спектр (доля 2–6 кГц, нет чистого синуса — peak/mean, flatness). Пример: `docs/projects/bang10v4/`.
+
 
 ## Text-fit check (mandatory, since gar10v2)
 - Every text element is drawn through a measured layout helper: ink bbox from PIL font metrics (`font.getbbox(text, anchor="ls")`) is compared to its container (card, pill, chip, table cell, stamp slot).
