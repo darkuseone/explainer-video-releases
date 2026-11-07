@@ -1,0 +1,83 @@
+{
+  "snapshot_date": "2026-11-07",
+  "snapshot_timezone": "Europe/Chisinau",
+  "status": "analysed",
+  "daily_date_range": [
+    "2026-10-09",
+    "2026-11-05"
+  ],
+  "report_timezone": "unknown",
+  "table_date_range": "not encoded; inferred same selection from exact engaged-total reconciliation",
+  "publication_metadata_anomalies": "Activity precedes publication date in series; table includes Nov 6 publication beyond Nov 5 daily end. Confirm report settings before equal-age/day claims.",
+  "files": [
+    {
+      "file": "2026-11-07/raw/file1.csv",
+      "sha256": "e5d6c9ddb998000cf8637488c25ca347f825b29a0836efba02bb756dd713f9b1",
+      "encoding": "UTF-8 (UTF-8-sig parser accepts optional BOM)",
+      "delimiter": ",",
+      "decimal": ".",
+      "data_rows": 28,
+      "kind": "daily channel engaged-view time series",
+      "columns": [
+        "Дата",
+        "Заинтересованные просмотры"
+      ]
+    },
+    {
+      "file": "2026-11-07/raw/file2.csv",
+      "sha256": "0d4b1d216f14fa28a22a9dda28c6e6fc0ab77faea93e182661b58b627bf21df8",
+      "encoding": "UTF-8 (UTF-8-sig parser accepts optional BOM)",
+      "delimiter": ",",
+      "decimal": ".",
+      "data_rows": 24,
+      "kind": "per-video selected-period table plus channel total",
+      "columns": [
+        "Контент",
+        "Название видео",
+        "Время публикации видео",
+        "Продолжительность",
+        "Заинтересованные просмотры",
+        "Средняя продолжительность просмотра",
+        "Средний процент просмотра (%)",
+        "Продолжили смотреть (%)",
+        "Уникальные зрители",
+        "Уникальный охват",
+        "Просмотры (совместные)",
+        "Среднее число просмотров одним пользователем",
+        "Новые зрители",
+        "Постоянные зрители",
+        "Случайные зрители",
+        "Постоянные зрители",
+        "Новые подписчики",
+        "Отказались от подписки",
+        "Отметки \"Нравится\"",
+        "Отметки \"Не нравится\"",
+        "Процент отметок \"Нравится\" (%)",
+        "Поделились",
+        "Новые комментарии",
+        "Просмотры",
+        "Время просмотра (часы)",
+        "Подписчики",
+        "Показы значков видео",
+        "CTR для значков видео (%)"
+      ]
+    },
+    {
+      "file": "2026-11-07/raw/file3.csv",
+      "sha256": "0e2ab3615b81eaea4a8eaaa185a8332194cfa7a60da803ccd34978e4b636c859",
+      "encoding": "UTF-8 (UTF-8-sig parser accepts optional BOM)",
+      "delimiter": ",",
+      "decimal": ".",
+      "data_rows": 140,
+      "kind": "daily engaged views for five selected/top videos",
+      "columns": [
+        "Дата",
+        "Контент",
+        "Название видео",
+        "Время публикации видео",
+        "Продолжительность",
+        "Заинтересованные просмотры"
+      ]
+    }
+  ]
+}
