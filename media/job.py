@@ -1,4 +1,5 @@
 # Search NASA Image & Video Library + NASA SVS for footage; save index + thumbnails.
+# rerun
 import json, sys, os, urllib.request, urllib.parse, zipfile, io
 out=sys.argv[1]; os.makedirs(out,exist_ok=True)
 def get(u,t=60):
