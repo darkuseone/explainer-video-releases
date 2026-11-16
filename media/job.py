@@ -1,4 +1,5 @@
 # wh10 v2: download chosen NASA videos (public domain), 1080p, no audio, <=120 s, plus contact sheets.
+# v2
 import json, sys, os, subprocess, urllib.request
 out=sys.argv[1]; os.makedirs(out,exist_ok=True)
 def get(u,t=600):

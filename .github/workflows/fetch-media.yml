@@ -19,6 +19,7 @@ jobs:
         run: |
           mkdir -p out
           if [ -f media/job.py ] && git diff --name-only HEAD~1 HEAD | grep -q media/job.py; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
             python3 media/job.py out
           else
             while read -r name url; do
