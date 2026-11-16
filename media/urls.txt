@@ -1,0 +1,9 @@
+voA.mp3 https://elevenlabsusercontent.com/database/workspace/424067ba319c47ccbff0e28903f7041c/content_generation/QfWOrOhmICZSVNj5AKeK/TTAkDg4odj3XkKqgwmBv/content.mp3?Expires=1794826800&KeyName=assets-cdn-key-1&Signature=a55nRaxSs2etFZ0Ip4xfVF08Vs4=
+voB.mp3 https://elevenlabsusercontent.com/database/workspace/424067ba319c47ccbff0e28903f7041c/content_generation/aCA9iO0XZwTOZ8QA5GxG/MQSwaa66u0x30EfAyXUh/content.mp3?Expires=1794826800&KeyName=assets-cdn-key-1&Signature=8ZMIg5oGMWb1oFsivGCzYVCjoGY=
+hero1.png https://pikaso.cdnpk.net/private/production/6050104774/render.png?token=exp=1795219200~hmac=3233324e46b702a7013c9cad3c1a73b47442c044c6b978f47c519ffdebe51e36
+hero2.png https://pikaso.cdnpk.net/private/production/6050104683/render.png?token=exp=1795219200~hmac=07aa0fea6fa2075a1385a2bc879db822a91cb11345ddcfbd8628c81ad05e613d
+astro.png https://pikaso.cdnpk.net/private/production/6050104868/render.png?token=exp=1795219200~hmac=5ec018a58a46dbbb9f9bf9b2e299452b9b9cf815b6e86a6475cd8c5f6b12100b
+bh.png https://pikaso.cdnpk.net/private/production/6050104928/render.png?token=exp=1795219200~hmac=6d7ec601962df28bf0b6078e240bcb6f5dcf109806f58e36e3e01ddb92b09eb4
+scope.png https://pikaso.cdnpk.net/private/production/6050105223/render.png?token=exp=1795219200~hmac=e1e754c9a420bf1fa216745a62553765a9d8bc8159c5b26e48ead1a75395e8e3
+bang.png https://pikaso.cdnpk.net/private/production/6050106159/render.png?token=exp=1795219200~hmac=a845a74b1c7e9af8bb61c49d7b8df9e1ca6d6646934a3a3e7e5e409b89c28d0f
+stars.png https://pikaso.cdnpk.net/private/production/6050105931/render.png?token=exp=1795219200~hmac=f61a6f8557c37bbbae6d7e6b8875b85cee07c0dcd75231a195552ac1fa30d82e

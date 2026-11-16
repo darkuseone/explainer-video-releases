@@ -1,0 +1,30 @@
+name: fetch-media
+# Временный помощник для сборки ролика: скачивает сгенерированные файлы
+# (ElevenLabs, HeyGen, Magnific) по списку из media/urls.txt и кладёт их
+# во временный пре-релиз media-wh10. Удалить после сборки.
+on:
+  push:
+    branches: [claude/project-thread-aufboh]
+    paths: [media/urls.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: download
+        run: |
+          mkdir -p out
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -fsSL --retry 3 -o "out/$name" "$url"
+            ls -la "out/$name"
+          done < media/urls.txt
+      - name: upload to temp prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=media-wh10
+          gh release view $TAG >/dev/null 2>&1 || gh release create $TAG --prerelease --title "wh10 media (temp)" --notes "temp assets" --target ${{ github.sha }}
+          gh release upload $TAG out/* --clobber
