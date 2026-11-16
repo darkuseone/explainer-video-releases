@@ -1,1 +1,2 @@
-music56.mp3 https://elevenlabsusercontent.com/database/workspace/424067ba319c47ccbff0e28903f7041c/content_generation/upFSMnY4WCPVe6kvDjfi/urNZVIIpql71sz9aQeuG/content.mp3?Expires=1794862800&KeyName=assets-cdn-key-1&Signature=GnBPVWSJXHVIDJNTuVtNxhFct8Q=
+belye-dyry-wh10-v2.mp4 file:media/belye-dyry-wh10-v2.mp4
+belye-dyry-wh10-v2_publish.txt file:media/belye-dyry-wh10-v2_publish.txt
