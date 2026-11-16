@@ -1,1 +1,2 @@
-avatar.mp4 https://files2.heygen.ai/aws_pacific/avatar_tmp/5ea17ba885e746c1a2967bb87a775601/1520bd20f3565a926060789356fa1c45.mp4?Expires=1795422849&Signature=A7um01XRUd287-iVaXOMDkdVi8jgvFm2wujoHKNdsTieE2JpT6Y3au25YYyv-8U5eYqnlCXkWpVWDgHn0iJQNxKIifs-seamrHRCN9o8UC3kWQ2sJ67pfYEKRZMsZj9tU9U-1qMMWS9BGrcQbTzZedI7NxfcYtO6zwwk3dh9fvlbzC-7MHWa0T3t8uCIFtc723nAfqzz~hRTXtaRC-L08A2gUzT0XWCAbLa8GkOdwX3aoxnxOddrO3WuTT1fqy~8VRg61tJwNrFUTANe5-CEg1SaT8Lln0QD-~GldxeRTvMrLpYWMks~hc5~e9ph-Xa9qsBihQO-TQEjSDCC308HqQ__&Key-Pair-Id=K3TSZ3KU01LY58
+belye-dyry-wh10.mp4 file:media/belye-dyry-wh10.mp4
+belye-dyry-wh10_publish.txt file:media/belye-dyry-wh10_publish.txt

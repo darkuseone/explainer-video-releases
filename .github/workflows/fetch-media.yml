@@ -18,7 +18,7 @@ jobs:
           mkdir -p out
           while read -r name url; do
             [ -z "$name" ] && continue
-            curl -fsSL --retry 3 -o "out/$name" "$url"
+            case "$url" in file:*) cp "${url#file:}" "out/$name" ;; *) curl -fsSL --retry 3 -o "out/$name" "$url" ;; esac
             ls -la "out/$name"
           done < media/urls.txt
       - name: upload to temp prerelease
