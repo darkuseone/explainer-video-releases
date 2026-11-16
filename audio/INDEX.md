@@ -49,6 +49,7 @@
 | `music/musicf_0.flac` | 53.96 | — | — | exoplanet (phoenix-planet) v3–v6; по каталогу — генерации ElevenLabs, промпты не сохранены | неизвестно точно | 2 |
 | `music/musicf_1.flac` | 54.00 | — | — | exoplanet (phoenix-planet) v3–v6; по каталогу — генерации ElevenLabs, промпты не сохранены | неизвестно точно | 2 |
 | `music/neural_data.m4a` | 70.00 | — | Redshift-shorts | Redshift-shorts, music_manifest.json: «предоставлено заказчиком» | неизвестно (предоставлено заказчиком) | 13 |
+| `music/space_cinematic_electronica_120bpm.mp3` | 56.04 | Космическая кинематографичная электроника 120 BPM, инструментал (проверено распознаванием речи). Тихое интро 0–7,8 с, дроп на 7,8 с, ровная энергия до 48 с, затухание 48–54 с. В wh10 v2 сдвинута на −3,25 с, чтобы дроп попал на первую вспышку | wh10v2 | ElevenLabs eleven_music_v2_5 (генерация 2026-11-16, flow Dw9hEQ6ub5BHwK64PtzL, 900 кредитов) | ElevenLabs — коммерческое использование по подписке | 1 |
 | `music/synapse_wonder.m4a` | 70.00 | — | Redshift-shorts | Redshift-shorts, music_manifest.json: «предоставлено заказчиком» | неизвестно (предоставлено заказчиком) | 13 |
 | `music/wonder_and_scale.m4a` | 70.00 | — | Redshift-shorts | Redshift-shorts, music_manifest.json: «предоставлено заказчиком» | неизвестно (предоставлено заказчиком) | 13 |
 | `sfx/ambient/9RAHSu9s7685zOWMjMec.mp3` | 1.04 | Industrial fan spin-up | tesla | ElevenLabs (генерация, Tesla) | ElevenLabs — коммерческое использование по подписке | 1 |
