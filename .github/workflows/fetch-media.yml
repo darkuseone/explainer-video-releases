@@ -1,11 +1,11 @@
 name: fetch-media
-# Временный помощник для сборки ролика: скачивает сгенерированные файлы
-# (ElevenLabs, HeyGen, Magnific) по списку из media/urls.txt и кладёт их
-# во временный пре-релиз media-wh10. Удалить после сборки.
+# Временный помощник для сборки ролика wh10: скачивает сгенерированные файлы
+# и футаж (NASA) по заданию из media/, кладёт во временный пре-релиз media-wh10.
+# Удалить после сборки.
 on:
   push:
     branches: [claude/project-thread-aufboh]
-    paths: [media/urls.txt]
+    paths: [media/urls.txt, media/job.py]
 permissions:
   contents: write
 jobs:
@@ -16,11 +16,16 @@ jobs:
       - name: download
         run: |
           mkdir -p out
-          while read -r name url; do
-            [ -z "$name" ] && continue
-            case "$url" in file:*) cp "${url#file:}" "out/$name" ;; *) curl -fsSL --retry 3 -o "out/$name" "$url" ;; esac
-            ls -la "out/$name"
-          done < media/urls.txt
+          if [ -f media/job.py ] && git diff --name-only HEAD~1 HEAD | grep -q media/job.py; then
+            python3 media/job.py out
+          else
+            while read -r name url; do
+              [ -z "$name" ] && continue
+              case "$url" in file:*) cp "${url#file:}" "out/$name" ;; *) curl -fsSL --retry 3 -o "out/$name" "$url" ;; esac
+              ls -la "out/$name"
+            done < media/urls.txt
+          fi
+          ls -la out
       - name: upload to temp prerelease
         env:
           GH_TOKEN: ${{ github.token }}
