@@ -1,2 +1,2 @@
-belye-dyry-wh10.mp4 file:media/belye-dyry-wh10.mp4
-belye-dyry-wh10_publish.txt file:media/belye-dyry-wh10_publish.txt
+kn1.mp3 https://elevenlabsusercontent.com/database/workspace/424067ba319c47ccbff0e28903f7041c/content_generation/WAQwV2gkXnpDZUim6zwc/78IALyB1D3jb5X7QnI5J/content.mp3?Expires=1794859200&KeyName=assets-cdn-key-1&Signature=HfVca9RL1SEcfrEb0KK0HfElaa4=
+kn2.mp3 https://elevenlabsusercontent.com/database/workspace/424067ba319c47ccbff0e28903f7041c/content_generation/Abp81sl1vvoMzJeKmzDD/xg6wl0Sz9ByLhovbHvYQ/content.mp3?Expires=1794859200&KeyName=assets-cdn-key-1&Signature=a71xChsG5xRCnFKBQ4APrLG2Q_k=
