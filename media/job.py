@@ -2,17 +2,22 @@
 import json, sys, os, subprocess, urllib.request, time, shutil
 out=sys.argv[1]; os.makedirs(out,exist_ok=True)
 UA={'User-Agent':'explainer-video-bot/1.0 (media research; github actions)'}
-def get(u,t=600):
-    for k in range(4):
+def get(u,t=600,tries=7,fatal=True):
+    u=u.split('?')[0] if 'wikimedia' in u else u
+    for k in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=t) as r: return r.read()
-        except Exception as e: print('retry',u,e); time.sleep(15*(k+1))
-    raise SystemExit('fail '+u)
+        except Exception as e: print('retry',k,u[-60:],e); time.sleep(30*(k+1))
+    if fatal: raise SystemExit('fail '+u)
+    return None
+time.sleep(60)
 shutil.copy('media/br10_av_audio.mp3',os.path.join(out,'br10_av_audio.mp3'))
 os.makedirs('tmp',exist_ok=True)
 for r in json.load(open('media/pick.json')):
     k=r['k']; ext=r['url'].rsplit('.',1)[1].lower(); src=f'tmp/c{k}.{ext}'
-    open(src,'wb').write(get(r['url'])); time.sleep(3)
+    b=get(r['url'],fatal=False); time.sleep(10)
+    if b is None: print('SKIP',k); continue
+    open(src,'wb').write(b)
     if r['kind']=='img':
         subprocess.run(['ffmpeg','-v','error','-y','-i',src,'-vf',"scale='min(2400,iw)':-2",'-q:v','2',os.path.join(out,f'c{k}.jpg')],check=True)
     else:
