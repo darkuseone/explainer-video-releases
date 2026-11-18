@@ -1,4 +1,4 @@
-# br10 job 5: clips still needed (typing, modem LEDs + sound), then Netscape/IE/Mosaic images; stress check last.
+# br10 job 6: phoneme stress check of the voice-over only.
 # each file uploaded to the media-br10 pre-release as soon as it is ready.
 import json, sys, os, subprocess, urllib.request, urllib.parse, time
 out=sys.argv[1]; os.makedirs(out,exist_ok=True); os.makedirs('tmp',exist_ok=True)
@@ -10,32 +10,6 @@ def get(u,t=600,tries=5):
         except Exception as e: print('retry',k,u[-70:],e,flush=True); time.sleep(20*(k+1))
     return None
 def up(p): subprocess.run(['gh','release','upload','media-br10',p,'--clobber'],check=False)
-# ---- Commons media through the API (thumbnail of an image, 720p/1080p transcode of a video)
-for r in json.load(open('media/pick.json')):
-    k=r['k']; title=r['title']; dst=os.path.join(out,f'c{k}.'+('jpg' if r['kind']=='img' else 'mp4'))
-    q=dict(action='query',titles=title,prop='imageinfo|videoinfo',iiprop='url',iiurlwidth=1800,viprop='derivatives',format='json')
-    d=json.loads(get('https://commons.wikimedia.org/w/api.php?'+urllib.parse.urlencode(q)) or b'{}')
-    pg=next(iter(d.get('query',{}).get('pages',{}).values()),{})
-    if r['kind']=='img':
-        u=(pg.get('imageinfo') or [{}])[0].get('thumburl') or r['url']
-    else:
-        der=(pg.get('videoinfo') or [{}])[0].get('derivatives',[])
-        der=[x for x in der if x.get('height',0) and x['height']<=1080 and 'webm' in x.get('type','')]
-        der.sort(key=lambda x:-x['height'])
-        u=der[0]['src'] if der else r['url']
-    print(k,u,flush=True)
-    b=get(u); time.sleep(8)
-    if b is None: print('SKIP',k,flush=True); continue
-    src=f'tmp/c{k}.'+u.split('?')[0].rsplit('.',1)[1]
-    open(src,'wb').write(b)
-    if r['kind']=='img':
-        subprocess.run(['ffmpeg','-v','error','-y','-i',src,'-q:v','2',dst],check=False)
-    else:
-        args=['ffmpeg','-v','error','-y','-i',src,'-vf',"scale=-2:'min(1080,ih)'",'-c:v','libx264','-crf','16','-preset','medium','-pix_fmt','yuv420p']
-        args+=(['-c:a','aac','-b:a','192k'] if k==233 else ['-an'])
-        subprocess.run(args+[dst],check=False)
-    if os.path.exists(dst): up(dst)
-
 def stress():
     # ---- stress check first (independent of Commons)
     subprocess.run([sys.executable,'-m','pip','install','-q','--user','torch','--index-url','https://download.pytorch.org/whl/cpu'],check=False)
