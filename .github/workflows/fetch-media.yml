@@ -1,0 +1,38 @@
+name: fetch-media
+# Временный помощник для сборки ролика dim10: скачивает сгенерированные файлы
+# и футаж по заданию из media/, кладёт во временный пре-релиз media-dim10.
+# Удалить после сборки.
+on:
+  push:
+    branches: [claude/project-thread-695btb]
+    paths: [media/urls.txt, media/job.py]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: download
+        run: |
+          mkdir -p out
+          if [ -f media/job.py ] && git diff --name-only HEAD~1 HEAD | grep -q media/job.py; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+            python3 media/job.py out
+          else
+            while read -r name url; do
+              [ -z "$name" ] && continue
+              case "$url" in file:*) cp "${url#file:}" "out/$name" ;; *) curl -fsSL --retry 3 -o "out/$name" "$url" ;; esac
+              ls -la "out/$name"
+            done < media/urls.txt
+          fi
+          ls -la out
+      - name: upload to temp prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=media-dim10
+          gh release view $TAG >/dev/null 2>&1 || gh release create $TAG --prerelease --title "dim10 media (temp)" --notes "temp assets" --target ${{ github.sha }}
+          gh release upload $TAG out/* --clobber
