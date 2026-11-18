@@ -11,7 +11,7 @@ def lufs(x):
 def wav(p, x):
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'f32le', '-ac', str(x.shape[1]), '-ar', str(SR), '-i', '-', p], input=x.astype(np.float32).tobytes(), check=True)
 N = int(TOT*SR)
-vo = load('../v/vo.wav'); vo = vo[:N]; vo = np.pad(vo, ((0, N-len(vo)), (0, 0)))
+vo = load('../v/vo2.wav'); vo = vo[:N]; vo = np.pad(vo, ((0, N-len(vo)), (0, 0)))
 
 # ---- bed: track[0:44] + 1 s crossfade + track[32:] (12 s = 6 bars at 120 bpm, same bar phase) ----
 m = load(A + 'music/space_cinematic_electronica_120bpm.mp3')
@@ -48,7 +48,10 @@ def e(f, at, gdb, maxd=None, fo=0.05, pan=0.0):
 W = ['whoosh/w1.wav', 'whoosh/w2.wav', 'whoosh/w3.wav', 'whoosh/w4.wav']
 for k, c in enumerate([3.58, 7.30, 22.82, 28.72, 31.84, 35.92, 40.0, 46.12, 50.02, 52.90]):
     e(W[k % 4], c-0.14, -21, pan=[-.25, .25][k % 2])
-e('whoosh/swipe_flick.wav', 1.80, -19)
+e('whoosh/pro_whoosh_big_long.wav', 0.0, -15)                     # hook: warp jump
+e('bolt9/bass_hit_sub.wav', 0.34, -12); e('impact/boom.wav', 0.34, -17)   # arrival flash
+e('impact/drop1.wav', 1.13, -16); e('whoosh/w4.wav', 1.10, -20)  # 4D echo burst
+e('impact/drop1.wav', 3.11, -17)                                  # 2D
 e('bolt9/bass_hit_sub.wav', 8.67-0.02, -15)                       # 0D: the point
 for c in [10.3, 12.6, 14.5, 16.6]: e('nuk10/air_peel.wav', c, -22, 0.9, 0.3)   # extrusions
 for k, c in enumerate([11.87, 13.87, 15.57]): e('impact/drop1.wav', c-0.02, -17)

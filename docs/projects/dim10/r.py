@@ -20,6 +20,8 @@ D3 = (255, 178, 62)    # 3D volume
 D4 = (255, 79, 163)    # 4D
 T = (124, 240, 255)    # time
 D5 = (185, 140, 255)   # 5D+ / hidden dimensions
+CAPK = (255, 211, 77)   # caption keyword: solar yellow, reads on every shot
+CAPGLOW = (0, 0, 0)
 DIM = {'d0': D0, 'd1': D1, 'd2': D2, 'd3': D3, 'd4': D4, 't': T, 'd5': D5}
 
 FD = ROOT + '/fonts/package/'
@@ -57,6 +59,8 @@ FOOT = json.load(open(ROOT + '/b/foot.json')) if os.path.exists(ROOT + '/b/foot.
 
 # captions: (t, text, {word: colour})
 CAP = [
+    (0.00, 'Ты живёшь', {}),
+    (0.62, 'в четырёх измерениях', {'четырёх': 'd4'}),
     (2.09, 'а видишь только два', {'два': 'd2'}),
     (3.69, 'Сетчатка глаза плоская', {'плоская': 'd2'}),
     (5.45, 'объём тебе дорисовывает мозг', {'объём': 'd3'}),
@@ -111,6 +115,7 @@ CAP_END = TOT
 
 # big dimension tags (t0, t1, text, colour)
 TAGS = [
+    (1.15, 3.13, '4D', 'd4'), (3.13, 3.58, '2D', 'd1'),
     (8.67, 11.87, '0D', 'd0'), (11.87, 13.87, '1D', 'd1'), (13.87, 15.57, '2D', 'd2'),
     (15.57, 19.88, '3D', 'd3'), (19.88, 22.82, '4D', 'd4'),
     (25.36, 28.72, '3+1', 't'),
@@ -273,7 +278,7 @@ def caption(base, t):
     words = txt.split(' ')
     while True:
         f = U(8, size)
-        parts = [text_layer(w, f, DIM[kw[w]] if w in kw else D0, stroke=5) for w in words]
+        parts = [text_layer(w, f, CAPK if w in kw else D0, stroke=6, stroke_fill=(6, 7, 12)) for w in words]
         sp = int(size*0.20)
         tw = sum(p.width for p in parts) + sp*(len(parts)-1)
         if tw <= 860 or size <= 44: break
@@ -289,15 +294,16 @@ def caption(base, t):
         for p in ln:
             canvas.paste(p, (x, li*lh + (lh - p.height)//2), p); x += p.width+sp
     u = eout((t-t0)/0.16)
-    hl = [DIM[kw[w]] for w in words if w in kw]
-    return place(base, canvas, 540, 1215, scale=0.9+0.1*u, alpha=u, glow=hl[0] if hl else (60, 60, 120), glow_r=16)
+    cy = 1440 if t < 3.58 else 1215
+    return place(base, canvas, 540, cy, scale=0.9+0.1*u, alpha=u, glow=CAPGLOW, glow_r=14)
 
 def tags(base, t):
     for t0, t1, txt, col in TAGS:
         if t0 <= t < t1:
             u = eback((t-t0)/0.24, 1.2); a = clamp((t-t0)/0.12)*clamp((t1-t)/0.12)
-            lay = text_layer(txt, U(9, 200), DIM[col])
-            base = place(base, lay, 540, 470, scale=1.25-0.25*u, alpha=a, glow=DIM[col], glow_r=26)
+            hk = t < 3.58
+            lay = text_layer(txt, U(9, 130 if hk else 200), DIM[col])
+            base = place(base, lay, 540, 400 if hk else 470, scale=1.25-0.25*u, alpha=a, glow=DIM[col], glow_r=26)
     return base
 
 def chip_layer(txt, col):
@@ -378,18 +384,90 @@ def drops(t, t0):
             d.ellipse([x-r, 1330-r*0.3, x+r, 1330+r*0.3], outline=(*D1, 150), width=3)
     return add_glow(base, lay, 1.0, 14)
 
+# ---------- HOOK: warp jump -> avatar "in many dimensions" over a spinning kaleidoscope ----------
+KW, KH = 270, 480
+_yy, _xx = np.mgrid[0:KH, 0:KW].astype(np.float32)
+_dx, _dy = _xx - KW/2, _yy - KH/2
+KR = np.sqrt(_dx**2 + _dy**2); KA = np.arctan2(_dy, _dx)
+def kaleido(t, n=8):
+    fr = av_frame(t)
+    src = np.asarray(fr.crop((FACE[0]-300, FACE[1]-300, FACE[0]+300, FACE[1]+300)).resize((300, 300), Image.BILINEAR)).astype(np.float32)
+    seg = 2*np.pi/n
+    a = np.mod(KA + t*0.9, seg); a = np.where(a > seg/2, seg - a, a)
+    z = 0.55 + 0.12*math.sin(t*2.1)
+    r = KR*z
+    sx = np.clip(150 + r*np.cos(a + 0.6), 0, 299).astype(np.int32)
+    sy = np.clip(150 + r*np.sin(a + 0.6), 0, 299).astype(np.int32)
+    k = src[sy, sx]
+    lum = (k[..., 0]*0.3 + k[..., 1]*0.55 + k[..., 2]*0.15)
+    lo, hi = np.percentile(lum, 4), np.percentile(lum, 97)
+    lum = np.clip((lum - lo)/(hi - lo + 1e-3), 0, 1)**0.75
+    # duotone along the dimension colours, hue drifting with angle and time
+    ph = (np.sin(KA*2 + t*1.7)*0.5 + 0.5)[..., None]
+    ca = np.array(D1, np.float32); cb = np.array(D4, np.float32); cc = np.array(D3, np.float32)
+    col = ca*(1-ph) + cb*ph
+    col = col*(1-np.clip(KR/KH*1.6, 0, 1)[..., None]*0.0) 
+    out = np.array(INK, np.float32)*(1-lum[..., None]) + col*lum[..., None]
+    out = out*0.95 + cc*0.35*(lum[..., None]**4)
+    out = out*0.6 + k*0.4*lum[..., None]   # keep a little of the real colour
+    im = Image.fromarray(np.clip(out, 0, 255).astype(np.uint8)).resize((W, H), Image.BILINEAR)
+    return im
+
+def warp(t):
+    # hyperspace jump: star streaks rushing out of the centre + a tesseract flying through the camera
+    base = Image.new('RGB', (W, H), INK); d = ImageDraw.Draw(base, 'RGBA')
+    sp = 0.25 + 3.5*eout(t/0.36)
+    for x, y, r, a in STARS:
+        ang = (x*7.13 + y*3.1) % (2*math.pi); d0 = (y % 900)/900
+        dd = (d0 + t*sp) % 1.0
+        r0 = 40 + dd**2*1300; r1 = r0 + 30 + 420*dd*sp/4
+        c = (220, 235, 255, int(255*min(1, dd*2)*a))
+        d.line([(540+math.cos(ang)*r0, 860+math.sin(ang)*r0), (540+math.cos(ang)*r1, 860+math.sin(ang)*r1)], fill=c, width=max(1, int(r*1.5)))
+    lay = layer3d('buildend', 52.9 + t*3)
+    s_ = 0.25 + 3.2*(t/0.40)**2
+    lay = lay.resize((int(W*s_), int(H*s_)), Image.BILINEAR)
+    big = Image.new('RGBA', (W, H), (0, 0, 0, 0)); big.paste(lay, (int(W/2 - lay.width/2), int(860 - lay.height*0.47)))
+    return add_glow(base, big, 1.4, 22)
+
+def hook(t):
+    if t < 0.36:
+        return warp(t)
+    base = kaleido(t)
+    base = Image.composite(base, Image.new('RGB', (W, H), INK), VIGN())
+    # card with the face, never covered by text
+    cw, ch, cx, cy = 680, 860, 540, 900
+    pop = eback((t-0.36)/0.32, 1.3)
+    w, h = cw*(0.6+0.4*pop), ch*(0.6+0.4*pop)
+    # echo copies: the same Markus in other dimensions, splitting and snapping back
+    amp = max(0.0, 1 - (t-0.36)/0.55)**2 + 0.8*max(0.0, 1 - abs(t-1.25)/0.35)**2 + 0.6*max(0.0, 1-abs(t-3.2)/0.3)**2
+    if amp > 0.01:
+        for col, (ox, oy) in zip([D1, D4, D3, D0], [(-1, -0.6), (1, -0.4), (0.3, 1), (-0.5, 0.8)]):
+            e = Image.new('RGB', (W, H), (0, 0, 0))
+            e = avatar_rect(e, t, (cx-w/2 + ox*270*amp, cy-h/2 + oy*200*amp, w, h), 560, 46, border=False)
+            tint = Image.new('RGB', (W, H), col)
+            g = e.convert('L').point(lambda v: min(255, int(v*2.4)))
+            e = Image.composite(tint, Image.new('RGB', (W, H), (0, 0, 0)), g)
+            base = ImageChops.screen(base, e.point(lambda v: int(v*min(1.0, 0.55+amp*0.8))))
+    base = avatar_rect(base, t, (cx-w/2, cy-h/2, w, h), 560, 46)
+    if t < 0.52:   # flash on arrival
+        base = Image.blend(base, Image.new('RGB', (W, H), D0), 0.8*(1-(t-0.36)/0.16))
+    return base
+
+_VG = None
+def VIGN():
+    global _VG
+    if _VG is None:
+        v = Image.new('L', (W//4, H//4), 0); ImageDraw.Draw(v).ellipse([-W//4*0.3, -H//4*0.1, W//4*1.3, H//4*1.1], fill=255)
+        _VG = v.filter(ImageFilter.GaussianBlur(30)).resize((W, H), Image.BILINEAR)
+    return _VG
+
 def frame(fi):
     t = fi / FPS
     shot = next(s for s in SHOTS if s[0] <= t < s[1]) if t < TOT else SHOTS[-1]
     t0, t1, kind, arg = shot
     FIT.clear()
     if kind == 'avatar_hook':
-        base = background(t)
-        u = ease((t-1.85)/0.45)     # full screen -> card
-        rect = (0+230*u, 0+400*u, W-(W-620)*u, H-(H-660)*u)
-        src = 714 - (714-520)*u
-        base = avatar_rect(base, t, rect, src, 40*u, border=u > 0.05)
-        base = cover(base, t)
+        base = hook(t)
     elif kind == 'avatar_end':
         base = background(t)
         lay = layer3d(arg, t)
@@ -414,8 +492,7 @@ def frame(fi):
     base = tags(base, t)
     base = chips(base, t)
     base = stamps(base, t)
-    if not (kind == 'avatar_hook' and t < 1.95):
-        base = caption(base, t)
+    base = caption(base, t)
     base = hud(base, t)
     # text-fit: every text box inside the frame
     for (x0, y0, x1, y1) in FIT:
