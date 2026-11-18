@@ -1,4 +1,4 @@
-# br10 job 4: stress check of the VO (phoneme CTC), then chosen Commons media via scaled thumbnails / transcodes,
+# br10 job 5: clips still needed (typing, modem LEDs + sound), then Netscape/IE/Mosaic images; stress check last.
 # each file uploaded to the media-br10 pre-release as soon as it is ready.
 import json, sys, os, subprocess, urllib.request, urllib.parse, time
 out=sys.argv[1]; os.makedirs(out,exist_ok=True); os.makedirs('tmp',exist_ok=True)
