@@ -1,55 +1,49 @@
-# br10 job 1: fetch VO + word timestamps; search Commons/NASA for footage (metadata + thumbs only).
-import json, sys, os, subprocess, urllib.request, urllib.parse, time, zipfile
+# br10 job 2: avatar audio to release; download chosen Commons footage/photos; stress check of VO by phoneme CTC.
+import json, sys, os, subprocess, urllib.request, time, shutil
 out=sys.argv[1]; os.makedirs(out,exist_ok=True)
 UA={'User-Agent':'explainer-video-bot/1.0 (media research; github actions)'}
-def get(u,t=120):
-    with urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=t) as r: return r.read()
-VO='https://elevenlabsusercontent.com/database/workspace/424067ba319c47ccbff0e28903f7041c/content_generation/XjuAG7SEdAm46R6kjz15/x4yjbdv7qQiHZi7Q3WKY/content.mp3?Expires=1795039200&KeyName=assets-cdn-key-1&Signature=-sko9Z8LChy2Li0sxJx45wQt1GI='
-open(os.path.join(out,'vo_raw.mp3'),'wb').write(get(VO,300))
-# --- search
-idx=[]; thumbs=os.path.join(out,'th'); os.makedirs(thumbs,exist_ok=True)
-def commons(q,video=False,n=12):
-    s=q+(' filetype:video' if video else ' filetype:bitmap')
-    u='https://commons.wikimedia.org/w/api.php?'+urllib.parse.urlencode(dict(action='query',generator='search',gsrnamespace=6,gsrsearch=s,gsrlimit=n,prop='imageinfo',iiprop='url|size|mime|extmetadata',iiurlwidth=480,format='json'))
-    try: d=json.loads(get(u))
-    except Exception as e: print('ERR',q,e); return
-    for p in (d.get('query',{}).get('pages',{}) or {}).values():
-        ii=p['imageinfo'][0]; m=ii.get('extmetadata',{})
-        r=dict(src='commons',q=q,title=p['title'],url=ii['url'],w=ii.get('width'),h=ii.get('height'),mime=ii.get('mime'),dur=ii.get('duration'),
-               lic=m.get('LicenseShortName',{}).get('value'),artist=(m.get('Artist',{}).get('value') or '')[:200],thumb=ii.get('thumburl'))
-        k=len(idx); r['k']=k; idx.append(r)
-        try: open(os.path.join(thumbs,f'c{k:03d}.jpg'),'wb').write(get(r['thumb'],60))
-        except Exception as e: print('thumb err',e)
-        time.sleep(0.5)
-for q in ['Tim Berners-Lee','First Web Server NeXT CERN','NeXTcube computer','WorldWideWeb browser screenshot','NCSA Mosaic browser','Marc Andreessen','Netscape Navigator','Internet Explorer 1.0','CERN Meyrin aerial','Windows 95 desktop','dial-up modem','CERN Computer Centre','Berners-Lee proposal information management']:
-    commons(q)
-for q in ['data center','server room','fiber optic','CERN','internet','typing keyboard','computer network','stock exchange trading floor','Earth night city lights','hard disk','modem','globe rotating']:
-    commons(q,True,10)
-def nasa(q,n=8):
-    u='https://images-api.nasa.gov/search?'+urllib.parse.urlencode(dict(q=q,media_type='video'))
-    try: d=json.loads(get(u))
-    except Exception as e: print('ERR',q,e); return
-    for it in d['collection']['items'][:n]:
-        dd=it['data'][0]; th=[l['href'] for l in it.get('links',[]) if l.get('render')=='image']
-        r=dict(src='nasa',q=q,id=dd['nasa_id'],title=dd.get('title'),desc=(dd.get('description') or '')[:200],thumb=th[0] if th else None)
-        k=len(idx); r['k']=k; idx.append(r)
-        if r['thumb']:
-            try: open(os.path.join(thumbs,f'c{k:03d}.jpg'),'wb').write(get(r['thumb'].replace(' ','%20'),60))
-            except Exception as e: print('thumb err',e)
-for q in ['city lights night ISS timelapse','Earth at night','supercomputer','Pleiades supercomputer','data visualization network']:
-    nasa(q)
-json.dump(idx,open(os.path.join(out,'index.json'),'w'),ensure_ascii=False,indent=1)
-with zipfile.ZipFile(os.path.join(out,'thumbs.zip'),'w') as z:
-    for f in sorted(os.listdir(thumbs)): z.write(os.path.join(thumbs,f),f)
-import shutil; shutil.rmtree(thumbs)
-# --- words
-subprocess.run([sys.executable,'-m','pip','install','-q','--user','faster-whisper==1.1.1'],check=True)
+def get(u,t=600):
+    for k in range(4):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=t) as r: return r.read()
+        except Exception as e: print('retry',u,e); time.sleep(15*(k+1))
+    raise SystemExit('fail '+u)
+shutil.copy('media/br10_av_audio.mp3',os.path.join(out,'br10_av_audio.mp3'))
+os.makedirs('tmp',exist_ok=True)
+for r in json.load(open('media/pick.json')):
+    k=r['k']; ext=r['url'].rsplit('.',1)[1].lower(); src=f'tmp/c{k}.{ext}'
+    open(src,'wb').write(get(r['url'])); time.sleep(3)
+    if r['kind']=='img':
+        subprocess.run(['ffmpeg','-v','error','-y','-i',src,'-vf',"scale='min(2400,iw)':-2",'-q:v','2',os.path.join(out,f'c{k}.jpg')],check=True)
+    else:
+        args=['ffmpeg','-v','error','-y','-i',src,'-vf',"scale=-2:'min(1080,ih)'",'-c:v','libx264','-crf','16','-preset','medium','-pix_fmt','yuv420p']
+        args+=(['-c:a','aac','-b:a','192k'] if k==233 else ['-an'])
+        subprocess.run(args+[os.path.join(out,f'c{k}.mp4')],check=True)
+json.dump(json.load(open('media/pick.json')),open(os.path.join(out,'pick.json'),'w'),ensure_ascii=False,indent=1)
+# ---- stress check
+subprocess.run([sys.executable,'-m','pip','install','-q','--user','torch==2.5.1','--index-url','https://download.pytorch.org/whl/cpu'],check=True)
+subprocess.run([sys.executable,'-m','pip','install','-q','--user','transformers==4.46.3','soundfile','huggingface_hub'],check=True)
 import site,importlib; site.addsitedir(site.getusersitepackages()); importlib.invalidate_caches()
-from faster_whisper import WhisperModel
-import numpy as np
-m=WhisperModel("medium",device="cpu",compute_type="int8")
-raw=subprocess.run(["ffmpeg","-v","quiet","-i",os.path.join(out,'vo_raw.mp3'),"-f","f32le","-ac","1","-ar","16000","-"],capture_output=True).stdout
+import numpy as np, torch
+from transformers import Wav2Vec2FeatureExtractor, Wav2Vec2ForCTC
+from huggingface_hub import hf_hub_download
+M='facebook/wav2vec2-xlsr-53-espeak-cv-ft'
+fe=Wav2Vec2FeatureExtractor.from_pretrained(M); pm=Wav2Vec2ForCTC.from_pretrained(M).eval()
+voc={v:k for k,v in json.load(open(hf_hub_download(M,'vocab.json'))).items()}
+open('tmp/vo.mp3','wb').write(get('https://github.com/darkuseone/explainer-video-releases/releases/download/media-br10/vo_raw.mp3'))
+words=json.loads(get('https://github.com/darkuseone/explainer-video-releases/releases/download/media-br10/vo_words.json'))
+raw=subprocess.run(["ffmpeg","-v","quiet","-i",'tmp/vo.mp3',"-f","f32le","-ac","1","-ar","16000","-"],capture_output=True).stdout
 a=np.frombuffer(raw,dtype=np.float32)
-segs,_=m.transcribe(a,language="ru",word_timestamps=True,beam_size=5,condition_on_previous_text=False)
-w=[(round(x.start,3),round(x.end,3),x.word,round(x.probability,3)) for s in segs for x in s.words]
-json.dump(w,open(os.path.join(out,'vo_words.json'),'w'),ensure_ascii=False)
+lines=[]
+for i,(s,e,w,p) in enumerate(words):
+    s0=max(0,s-0.04); e0=e+0.05
+    y=a[int(s0*16000):int(e0*16000)]
+    if len(y)<1600: y=np.pad(y,(0,1600-len(y)))
+    x=fe(y,sampling_rate=16000,return_tensors='pt').input_values
+    with torch.no_grad(): ids=pm(x).logits[0].argmax(-1).numpy()
+    ph=[];prev=-1
+    for t in ids:
+        if t!=prev and t!=0: ph.append(voc[int(t)])
+        prev=t
+    lines.append(f'{s:6.2f} {w.strip():18s} {" ".join(ph)}')
+open(os.path.join(out,'stress_phones.txt'),'w').write('\n'.join(lines)); print('\n'.join(lines))
