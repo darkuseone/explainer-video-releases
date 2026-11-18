@@ -11,11 +11,14 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 80
     steps:
       - uses: actions/checkout@v4
       - name: run job
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          gh release view media-br10 >/dev/null 2>&1 || gh release create media-br10 --prerelease --title "br10 media (temp)" --notes "temp assets" --target ${{ github.sha }}
           mkdir -p out
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
           python3 media/job.py out
