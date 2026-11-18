@@ -1,2 +1,2 @@
-izmereniya-dim10.mp4 file:media/izmereniya-dim10.mp4
-izmereniya-dim10_publish.txt file:media/izmereniya-dim10_publish.txt
+izmereniya-dim10-v2.mp4 file:media/izmereniya-dim10-v2.mp4
+izmereniya-dim10-v2_publish.txt file:media/izmereniya-dim10-v2_publish.txt
