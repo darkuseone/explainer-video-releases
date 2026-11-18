@@ -10,30 +10,6 @@ def get(u,t=600,tries=5):
         except Exception as e: print('retry',k,u[-70:],e,flush=True); time.sleep(20*(k+1))
     return None
 def up(p): subprocess.run(['gh','release','upload','media-br10',p,'--clobber'],check=False)
-# ---- stress check first (independent of Commons)
-subprocess.run([sys.executable,'-m','pip','install','-q','--user','torch==2.5.1','--index-url','https://download.pytorch.org/whl/cpu'],check=True)
-subprocess.run([sys.executable,'-m','pip','install','-q','--user','transformers==4.46.3','huggingface_hub'],check=True)
-import site,importlib; site.addsitedir(site.getusersitepackages()); importlib.invalidate_caches()
-import numpy as np, torch
-from transformers import Wav2Vec2FeatureExtractor, Wav2Vec2ForCTC
-from huggingface_hub import hf_hub_download
-M='facebook/wav2vec2-xlsr-53-espeak-cv-ft'
-fe=Wav2Vec2FeatureExtractor.from_pretrained(M); pm=Wav2Vec2ForCTC.from_pretrained(M).eval()
-voc={v:k for k,v in json.load(open(hf_hub_download(M,'vocab.json'))).items()}
-open('tmp/vo.mp3','wb').write(get('https://github.com/darkuseone/explainer-video-releases/releases/download/media-br10/vo_raw.mp3'))
-words=json.loads(get('https://github.com/darkuseone/explainer-video-releases/releases/download/media-br10/vo_words.json'))
-raw=subprocess.run(["ffmpeg","-v","quiet","-i",'tmp/vo.mp3',"-f","f32le","-ac","1","-ar","16000","-"],capture_output=True).stdout
-a=np.frombuffer(raw,dtype=np.float32); lines=[]
-for s,e,w,p in words:
-    y=a[int(max(0,s-0.04)*16000):int((e+0.05)*16000)]
-    if len(y)<1600: y=np.pad(y,(0,1600-len(y)))
-    with torch.no_grad(): ids=pm(fe(y,sampling_rate=16000,return_tensors='pt').input_values).logits[0].argmax(-1).numpy()
-    ph=[];prev=-1
-    for t in ids:
-        if t!=prev and t!=0: ph.append(voc[int(t)])
-        prev=t
-    lines.append(f'{s:6.2f} {w.strip():18s} {" ".join(ph)}')
-open(os.path.join(out,'stress_phones.txt'),'w').write('\n'.join(lines)); up(os.path.join(out,'stress_phones.txt'))
 # ---- Commons media through the API (thumbnail of an image, 720p/1080p transcode of a video)
 for r in json.load(open('media/pick.json')):
     k=r['k']; title=r['title']; dst=os.path.join(out,f'c{k}.'+('jpg' if r['kind']=='img' else 'mp4'))
@@ -59,3 +35,31 @@ for r in json.load(open('media/pick.json')):
         args+=(['-c:a','aac','-b:a','192k'] if k==233 else ['-an'])
         subprocess.run(args+[dst],check=False)
     if os.path.exists(dst): up(dst)
+
+def stress():
+    # ---- stress check first (independent of Commons)
+    subprocess.run([sys.executable,'-m','pip','install','-q','--user','torch','--index-url','https://download.pytorch.org/whl/cpu'],check=False)
+    subprocess.run([sys.executable,'-m','pip','install','-q','--user','transformers','huggingface_hub'],check=False)
+    import site,importlib; site.addsitedir(site.getusersitepackages()); importlib.invalidate_caches()
+    import numpy as np, torch
+    from transformers import Wav2Vec2FeatureExtractor, Wav2Vec2ForCTC
+    from huggingface_hub import hf_hub_download
+    M='facebook/wav2vec2-xlsr-53-espeak-cv-ft'
+    fe=Wav2Vec2FeatureExtractor.from_pretrained(M); pm=Wav2Vec2ForCTC.from_pretrained(M).eval()
+    voc={v:k for k,v in json.load(open(hf_hub_download(M,'vocab.json'))).items()}
+    open('tmp/vo.mp3','wb').write(get('https://github.com/darkuseone/explainer-video-releases/releases/download/media-br10/vo_raw.mp3'))
+    words=json.loads(get('https://github.com/darkuseone/explainer-video-releases/releases/download/media-br10/vo_words.json'))
+    raw=subprocess.run(["ffmpeg","-v","quiet","-i",'tmp/vo.mp3',"-f","f32le","-ac","1","-ar","16000","-"],capture_output=True).stdout
+    a=np.frombuffer(raw,dtype=np.float32); lines=[]
+    for s,e,w,p in words:
+        y=a[int(max(0,s-0.04)*16000):int((e+0.05)*16000)]
+        if len(y)<1600: y=np.pad(y,(0,1600-len(y)))
+        with torch.no_grad(): ids=pm(fe(y,sampling_rate=16000,return_tensors='pt').input_values).logits[0].argmax(-1).numpy()
+        ph=[];prev=-1
+        for t in ids:
+            if t!=prev and t!=0: ph.append(voc[int(t)])
+            prev=t
+        lines.append(f'{s:6.2f} {w.strip():18s} {" ".join(ph)}')
+    open(os.path.join(out,'stress_phones.txt'),'w').write('\n'.join(lines)); up(os.path.join(out,'stress_phones.txt'))
+try: stress()
+except Exception as ex: print("stress check failed",ex)
