@@ -1,0 +1,18 @@
+name: publish-cd10
+# Временный: создаёт релиз media-cd10 с готовым роликом. Удалить сразу после публикации.
+on:
+  push:
+    branches: [claude/nice-edison-e48b88]
+    paths: [media/kod-cd10.mp4]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view media-cd10 >/dev/null 2>&1 || gh release create media-cd10 --target ${{ github.sha }} --title "Нейросеть рисует пикселями, а код формулами" --notes "cd10. Shorts 51 с: чем рисует нейросеть и чем код (Claude Code). Ролик и текст для публикации."
+          gh release upload media-cd10 media/kod-cd10.mp4 media/kod-cd10_publish.txt --clobber
