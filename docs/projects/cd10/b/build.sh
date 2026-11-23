@@ -2,7 +2,7 @@
 # Полная сборка cd10. Запуск из docs/projects/cd10/b:  ./build.sh /path/to/av.mp4
 set -e
 cd "$(dirname "$0")"
-python3 prep_av.py "$1"
+python3 prep_av.py "$1" "${2:-0}"
 NF=$(python3 -c "import json;print(3+int(round(json.load(open('timeline.json'))['tot']*25)))")
 mkdir -p parts; rm -f parts/*.mkv
 Q=$(( (NF+3)/4 ))
