@@ -1,4 +1,6 @@
-*.wav
+raw.wav
+pre.wav
+w.wav
+av.wav
 *.json
 !av_meta.json
-ln.json
