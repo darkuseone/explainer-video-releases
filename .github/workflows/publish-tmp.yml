@@ -1,0 +1,19 @@
+name: publish-tmp
+# Временный: создаёт релиз из media/ (tag и заголовок в media/release.txt). Удалить сразу после публикации.
+on:
+  push:
+    branches: [claude/nice-edison-e48b88]
+    paths: [media/release.txt]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=$(sed -n 1p media/release.txt); TITLE=$(sed -n 2p media/release.txt); NOTES=$(sed -n '3,$p' media/release.txt)
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --target ${{ github.sha }} --title "$TITLE" --notes "$NOTES"
+          gh release upload "$TAG" $(ls media/* | grep -v release.txt) --clobber
