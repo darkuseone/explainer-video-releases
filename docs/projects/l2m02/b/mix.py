@@ -16,11 +16,8 @@ cues=[(0.0,S+'impact/hook_hit.wav',0.55),(0.0,S+E+'whoosh-short_1.wav',0.5),(wt(
  (wt('другие'),S+'impact/stamp_0.mp3',0.55),(PH[3][0]-0.1,S+'whoosh/whoosh_sharp.wav',0.4),(wt('гиран'),S+E+'snap_1.wav',0.4),(wt('скиллы'),S+E+'snap_2.wav',0.35),
  (wt('интерфейс'),S+E+'whoosh-short_3.wav',0.35),(wt('только'),S+'ui/fit_land.light_finger_phone.wav',0.6),(wt('пальцы'),S+'ui/fit_land.light_finger_phone.wav',0.6),
  (PH[4][0]-0.1,S+'whoosh/whoosh_soft.wav',0.4),(wt('телефона'),S+'riser/swell_0.mp3',0.3),(wt('мир'),S+'impact/stamp1.wav',0.5),(wt('компьютеров')-0.5,S+E+'whoosh-short_1.wav',0.35),
- (PH[5][0]-0.1,S+'whoosh/whoosh_double.wav',0.35),(wt('63'),S+'bolt9/bass_hit_sub.wav',0.7),(wt('2,8'),S+'bolt9/bass_hit_sub.wav',0.6),(wt('хватит'),S+'warm/counter_land_latch.wav',0.5),
- (wt('айфона'),S+'bolt9/bass_hit_sub.wav',0.6),(PH[6][0]-0.1,S+E+'whoosh-short_2.wav',0.35),(wt('фанатский'),S+'impact/stamp_0.mp3',0.5),(wt('открытой'),S+'impact/stamp1.wav',0.5),
- (wt('баги'),S+'ui/pro_glitch_standard.wav',0.45),(PH[7][0]-0.1,S+'whoosh/whoosh_cinematic.wav',0.35),(wt('27'),S+'foley/n03_calendar_tear.mp3',0.5),(wt('27'),S+'bolt9/bass_hit_sub.wav',0.55),
- (wt('ровно'),S+'warm/reveal_slide_thud_3.wav',0.5),(wt('2019'),S+'ui/tick2.wav',0.4),(PH[8][0]-0.1,S+'impact/hook_hit.wav',0.4),(wt('класс'),S+'ui/picker_tick_2.wav',0.4),
- (wt('подпишись'),S+'ui/sub_click.wav',0.6)]
+ (PH[5][0]-0.1,S+'whoosh/whoosh_double.wav',0.35),(wt('63'),S+'bolt9/bass_hit_sub.wav',0.7),(wt('хватит'),S+'warm/counter_land_latch.wav',0.5),
+ (wt('айфона'),S+'bolt9/bass_hit_sub.wav',0.6),(PH[6][0]-0.1,S+'impact/hook_hit.wav',0.4),(wt('подпишись'),S+'ui/sub_click.wav',0.6)]
 D=TOT+OFF+0.25
 inp=['-i','../v/vo.wav','-i',R+'music/space_cinematic_electronica_120bpm.mp3']
 fl=[];lab=[]

@@ -61,7 +61,7 @@ _avc={}
 def av_frame(t):
     for s in AVM:
         if s['t0']-0.6<=t<=s['t1']+0.6:
-            i=int(round((t-s['t0']+s['src0']+LAG)*FPS))+1; i=max(1,min(AVN,i)); fn=P('av',f'f{i:04d}.jpg')
+            i=int(math.floor((t-s['t0']+s['src0']+LAG)*FPS+1e-6))+1; i=max(1,min(AVN,i)); fn=P('av',f'f{i:04d}.jpg')
             if fn not in _avc:
                 if len(_avc)>30: _avc.clear()
                 _avc[fn]=Image.open(fn).convert('RGBA')
@@ -161,7 +161,7 @@ def cap_chunks():
             out.append((cur[0][0],cur[-1][1],[x[2] for x in cur])); cur=[]
     res=[]
     for c in out:
-        if res and len(c[2])==1 and len(res[-1][2])<=2 and c[0]-res[-1][1]<0.2 and sum(len(w) for w in res[-1][2]+c[2])<=17:
+        if res and len(c[2])==1 and len(res[-1][2])<=2 and res[-1][2][-1][-1] not in '.?!…' and c[0]-res[-1][1]<0.2 and sum(len(w) for w in res[-1][2]+c[2])<=17:
             p=res.pop(); res.append((p[0],c[1],p[2]+c[2]))
         else: res.append(c)
     return res
@@ -273,10 +273,10 @@ def frame(fi):
             if t>=wt('мир'): stamp(b,'ОДИН МИР',540,955,YEL,96,alpha=min(1,(t-wt('мир'))/0.12),scale=lerp(1.3,1,eo((t-wt('мир'))/0.2)))
         else:
             b.alpha_composite(vfill('laptop',t,tc,1.0,1.06,0.5,0.5)); chip(b,'ОДНОВРЕМЕННО: НОУТБУК + ТЕЛЕФОН',540,470,GOLD,size=40,alpha=min(1,(t-tc)/0.15))
-    # P5 numbers 27.0..36.8
+    # P5 numbers
     elif t<pt(6,0)-0.1:
-        t0=pt(5,0)-0.1; t63=wt('63'); t28=wt('2,8'); tx=wt('хватит'); ti=wt('айфона')
-        name,st=('andr',t0) if t<t28 else (('crit',t28) if t<tx else ('load',tx))
+        t0=pt(5,0)-0.1; t63=wt('63'); tx=wt('хватит'); ti=wt('айфона')
+        name,st=('andr',t0) if t<tx else (('crit',tx) if t<ti else ('load',ti))
         b.alpha_composite(vfill(name,t,st,1.0,1.06,0.5,0.45)); darken(b,0.55 if t>=t63 else 0.35)
         if t<t63:
             p=eo((t-t0)/0.4)
@@ -286,59 +286,26 @@ def frame(fi):
                 txt(b,lab,170,y-40,40,'disp',HI,stroke=5,anchor='lm'); txt(b,f'{val:.1f} ГБ'.replace('.',','),180+max(ww,20)+10,y+45,52,'disp',col,stroke=6,anchor='lm')
             chip(b,'СКОЛЬКО ВЕСИТ?',540,470,GOLD,size=50)
         else:
-            items=[(t63,'63 МБ','APK-ФАЙЛ'),(t28,'+2,8 ГБ','ДОКАЧКА ПРИ ЗАПУСКЕ'),(tx,'2 ГБ ОЗУ','ANDROID 7.0+'),(ti,'iPHONE XS+','iOS 15 И НОВЕЕ')]
+            items=[(t63,'63 МБ','APK-ФАЙЛ + 2,8 ГБ ДАННЫХ'),(tx,'2 ГБ ОЗУ','ANDROID 7.0+'),(ti,'iPHONE XS+','iOS 15 И НОВЕЕ')]
             cur=[it for it in items if t>=it[0]][-1]
             p=eob(min(1,(t-cur[0])/0.3),1.4)
             bigtxt(b,cur[1],540,820,190,YEL,scale=0.7+0.3*p,alpha=min(1,(t-cur[0])/0.1))
             chip(b,cur[2],540,1010,GOLD,size=46,alpha=min(1,(t-cur[0])/0.15))
             for k,it in enumerate(items):
-                on=t>=it[0]; d=ImageDraw.Draw(b); x=300+k*160
+                on=t>=it[0]; d=ImageDraw.Draw(b); x=380+k*160
                 d.ellipse((x-14,1180-14,x+14,1180+14),fill=(YEL if on else (70,70,90))+(255,))
             for it in items: flash(b,t,it[0],0.1,0.35)
-    # P6 nuance 36.9..43.0
-    elif t<pt(7,0)-0.1:
-        t0=pt(6,0)-0.1; tf=wt('фанатский'); tb=wt('открытой'); tg=wt('баги')
-        if t<tb:
-            r=hwin(b,'charsel' if t<tf else 'obt',t,t0 if t<tf else tf,y=780)
-            if t>=tf: stamp(b,'НЕ ОФИЦИАЛЬНО',540,1180,RED,84,alpha=min(1,(t-tf)/0.12),scale=lerp(1.3,1,eo((t-tf)/0.18)))
-            if t<tf: chip(b,'МОБИЛЬНЫЙ КЛИЕНТ L2META',540,r[1]-60,GOLD,size=40)
-        else:
-            r=hwin(b,'srv',t,tb,y=780,border=YEL)
-            stamp(b,'ОБТ',540,1180,YEL,110,alpha=min(1,(t-tb)/0.12),scale=lerp(1.3,1,eo((t-tb)/0.18)))
-        flash(b,t,tf,0.1,0.4)
-    # P7 date 43.0..49.9
-    elif t<pt(8,0)-0.1:
-        t0=pt(7,0)-0.1; t27=wt('27'); tr=wt('ровно')
-        b.alpha_composite(vfill('crowd' if t<tr else 'hook2',t,t0 if t<tr else tr,1.0,1.07,0.5,0.45)); darken(b,0.45)
-        def cal(x,y,top,big,sub,col,p,scale=1.0):
-            w,h=380,420; L=Image.new('RGBA',(w,h),(0,0,0,0)); d=ImageDraw.Draw(L)
-            d.rounded_rectangle((0,0,w-1,h-1),30,fill=(245,238,226,255)); d.rounded_rectangle((0,0,w-1,110),30,fill=col+(255,)); d.rectangle((0,80,w-1,110),fill=col+(255,))
-            d.text((w/2,58),top,font=font('disp',56),fill=(255,255,255,255),anchor='mm')
-            d.text((w/2,235),big,font=font('disp',170),fill=(30,20,34,255),anchor='mm'); d.text((w/2,355),sub,font=font('disp',fit_text(sub,46,'disp',w-50)),fill=(90,70,90,255),anchor='mm')
-            if scale!=1: L=L.resize((int(w*scale),int(h*scale)),Image.BICUBIC)
-            comp(b,L,(x-L.width/2,y-L.height/2+40*(1-p)),p)
-        if t>=t27:
-            p=eo((t-t27)/0.3); x=lerp(540,775,eo((t-tr)/0.4)) if t>=tr else 540
-            cal(x,800,'НОЯБРЬ','27','2026 · MOBILE x10',RED,p,1.15 if t<tr else lerp(1.15,1.0,eo((t-tr)/0.4)))
-        if t>=tr:
-            p=eo((t-tr)/0.35); cal(305,800,'НОЯБРЬ','27','2019 · LINEAGE2M',(108,61,138),p,1.0)
-            if t>=wt('2019'): chip(b,'7 ЛЕТ СПУСТЯ · ТОТ ЖЕ ДЕНЬ',540,1150,GOLD,size=42,alpha=min(1,(t-wt('2019'))/0.15))
-        else: chip(b,'ОТКРЫТИЕ В 20:00',540,1150,GOLD,size=44,alpha=min(1,max(0,(t-t27-0.2)/0.15)))
-        flash(b,t,t27,0.12,0.5); flash(b,t,tr,0.1,0.3)
-    # P8 avatar outro
+    # P6 short avatar outro: comment bait on screen, voice = subscribe line only
     else:
-        t0=pt(8,0)-0.1
+        t0=pt(6,0)-0.1
         bg=shot('tail',t-t0).resize((135,240)).filter(ImageFilter.GaussianBlur(4)); b.alpha_composite(ImageEnhance.Brightness(kb(bg,1.0)).enhance(0.4))
-        D=600*eob(min(1,(t-t0)/0.35),1.2); avatar(b,t,540,760,D)
-        tk=wt('класс')
-        if t>=tk and t<wt('подпишись'):
-            p=eo((t-tk)/0.25); chip(b,'ПРОРОК · xXx_NAGIBATOR_xXx',540,1180,GOLD,size=44,alpha=p,scale=0.9+0.1*p)
+        D=600*eob(min(1,(t-t0)/0.3),1.2); avatar(b,t,540,760,D)
+        chip(b,'НАПИШИ СВОЙ КЛАСС И НИК ИЗ 2000-Х',540,330,GOLD,size=46,alpha=min(1,(t-t0)/0.15))
         tsub=wt('подпишись')
         if t>=tsub:
             p=eob(min(1,(t-tsub)/0.3),1.5); press=1-0.08*math.sin(min(1,max(0,(t-tsub-0.45)/0.25))*math.pi)
             chip(b,'ПОДПИСАТЬСЯ',540,1180,RED,size=56,fill=RED+(255,),tc=(255,255,255),alpha=min(1,(t-tsub)/0.1),scale=(0.8+0.2*p)*press)
         flash(b,t,t0,0.14,0.5)
-    if t>=wt('баги') and t<wt('баги')+0.2: glitch(b,t,wt('баги'),3)
     caption(b,t)
     b.alpha_composite(VIG)
     return b

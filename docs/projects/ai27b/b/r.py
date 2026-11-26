@@ -175,7 +175,7 @@ def frame(fi):
     else:
         t0=pt(10,0)-0.1; b=split_bg(t,0.3)
         C.avatar(b,t,540,780,620*eob(min(1,(t-t0)/0.35),1.2))
-        if t>=wt('комитет') and t<wt('подпишись'): chip(b,'ТВОЙ КОМИТЕТ ИЗ 10 ЧЕЛОВЕК',540,1210,GOLD,size=46,alpha=min(1,(t-wt('комитет'))/0.15))
+        chip(b,'НАПИШИ: КОГО ТЫ ПОСАДИЛ БЫ В КОМИТЕТ?',540,330,GOLD,size=46,alpha=min(1,(t-t0)/0.15))
         ts=wt('подпишись')
         if t>=ts:
             p=eob(min(1,(t-ts)/0.3),1.5); press=1-0.08*math.sin(min(1,max(0,(t-ts-0.45)/0.25))*math.pi)

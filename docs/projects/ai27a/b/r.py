@@ -152,8 +152,8 @@ def frame(fi):
     else:
         t0=pt(8,0)-0.1
         b.alpha_composite(ImageEnhance.Brightness(kb(C.shot('aisle',t-t0).resize((135,240)).filter(ImageFilter.GaussianBlur(3)),1.0)).enhance(0.4))
-        C.avatar(b,t,540,780,620*eob(min(1,(t-t0)/0.35),1.2))
-        if t>=wt('реальным') and t<wt('подпишись'): chip(b,'ЧТО ИЗ ЭТОГО УЖЕ РЕАЛЬНО?',540,1210,GOLD,size=46,alpha=min(1,(t-wt('реальным'))/0.15))
+        C.avatar(b,t,540,780,620*eob(min(1,(t-t0)/0.3),1.2))
+        chip(b,'НАПИШИ: ЧТО ИЗ ЭТОГО УЖЕ РЕАЛЬНО?',540,330,GOLD,size=46,alpha=min(1,(t-t0)/0.15))
         ts=wt('подпишись')
         if t>=ts:
             p=eob(min(1,(t-ts)/0.3),1.5); press=1-0.08*math.sin(min(1,max(0,(t-ts-0.45)/0.25))*math.pi)

@@ -139,7 +139,7 @@ class Ctx:
     def av_frame(self,t):
         for s in self.AVM:
             if s['t0']-0.6<=t<=s['t1']+0.6:
-                i=int(round((t-s['t0']+s['src0']+self.LAG)*FPS))+1; i=max(1,min(self.AVN,i)); fn=self.P('av',f'f{i:04d}.jpg')
+                i=int(math.floor((t-s['t0']+s['src0']+self.LAG)*FPS+1e-6))+1; i=max(1,min(self.AVN,i)); fn=self.P('av',f'f{i:04d}.jpg')
                 if fn not in self._avc:
                     if len(self._avc)>30: self._avc.clear()
                     self._avc[fn]=Image.open(fn).convert('RGBA')
@@ -213,7 +213,7 @@ def cap_chunks(WD):
             out.append((cur[0][0],cur[-1][1],[x[2] for x in cur])); cur=[]
     res=[]
     for c in out:
-        if res and len(c[2])==1 and len(res[-1][2])<=2 and c[0]-res[-1][1]<0.2 and sum(len(w) for w in res[-1][2]+c[2])<=17:
+        if res and len(c[2])==1 and len(res[-1][2])<=2 and res[-1][2][-1][-1] not in '.?!…' and c[0]-res[-1][1]<0.2 and sum(len(w) for w in res[-1][2]+c[2])<=17:
             p=res.pop(); res.append((p[0],c[1],p[2]+c[2]))
         else: res.append(c)
     return res
